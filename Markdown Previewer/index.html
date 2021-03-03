@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Markdown Previewer</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <head>
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      <title>Markdown Previewer</title>
+    </head>
+
+    <div class="content">
+      <!-- text area for typing markdown -->
+      <div id="editorDiv" class="editorDiv smaller-editor">
+        <div class="editorTitle title">
+          <h2 class="titleText">Editor</h2>
+          <button id="expandEditorBtn" class="expandEditBtn">
+            <img
+              id="editorImg"
+              class="expand-icon"
+              src="assets/images/expand-icon.png"
+              alt="shrink and expand editor button"
+            />
+          </button>
+        </div>
+        <textarea
+          id="editor"
+          class="editorMark smaller-textarea"
+          autofocus
+        ></textarea>
+      </div>
+
+      <!-- area to preview markdown results -->
+      <div id="previewDiv" class="previewDiv smaller-previewer">
+        <div class="previewTitle title">
+          <h2 class="titleText">Previewer</h2>
+          <button id="expandPreviewerBtn" class="expandEditBtn">
+            <img
+              id="previewerImg"
+              class="expand-icon"
+              src="assets/images/expand-icon.png"
+              alt="shrink and expand editor button"
+            />
+          </button>
+        </div>
+        <div id="preview" class="previewMark smaller-preview-div"></div>
+      </div>
+    </div>
+    <footer>
+      <h3 class="footerText">
+        This project is not yet complete, it's a work in progress!
+      </h3>
+    </footer>
+    <!-- Uncomment later to attribute icon authors -->
+    <!-- Expand icons from https://www.iconfinder.com/icons/293673/expand_icon-->
+    <!-- partial -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

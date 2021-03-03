@@ -1,0 +1,14 @@
+{
+  "name": "markdowneditor",
+  "version": "1.0.0",
+  "description": "A simple online markdown editor",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "author": "salemlf",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
