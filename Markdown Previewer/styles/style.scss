@@ -31,6 +31,7 @@ body {
 .editorDiv {
   margin: 0 auto;
   margin-bottom: 50px;
+  border-radius: 10px;
   border: 2px solid black;
   background-color: $markAndPreviewColor;
 }
@@ -39,12 +40,11 @@ body {
 .editorMark {
   display: block;
   margin: 0 auto;
+  margin-top: 10px;
   padding-top: 20px;
   border: none;
   overflow: auto;
   outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
   background-color: $markAndPreviewColor;
   resize: none;
@@ -54,7 +54,7 @@ body {
 //TODO: change background color of button?
 .expandEditBtn {
   margin-top: 9px;
-  margin-right: 7px;
+  margin-right: 9px;
   float: right;
 }
 
@@ -63,6 +63,7 @@ body {
 .previewDiv {
   border: 2px solid black;
   margin: 0 auto;
+  border-radius: 10px;
   background-color: $markAndPreviewColor;
   code {
     background: white;
@@ -74,17 +75,19 @@ body {
 // markdown preview output text
 .previewMark {
   margin: 0 auto;
+  margin-top: 10px;
   resize: none;
-  padding: 0px 5px 0px 5px;
+  border-radius: 10px;
   word-wrap: break-word;
 }
 
 .title {
   margin-top: 0px;
   margin-bottom: 0px;
+  border-radius: 10px 10px 0 0;
   width: 100%;
   height: 50px;
-  display: inline-block;
+  // display: inline-block;
   vertical-align: top;
   border-bottom: 1px solid black;
   background-color: $titleBackground;
@@ -92,7 +95,8 @@ body {
 
 .titleText {
   margin-top: 5px;
-  padding-left: 5px;
+  margin-left: 10px;
+  // padding-left: 5px;
   display: inline-block;
 }
 
