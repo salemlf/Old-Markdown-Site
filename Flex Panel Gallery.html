@@ -1,0 +1,1635 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Flex Panel Gallery</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/*
+Theme Name: Hivacruz
+Theme URI: https://github.com/kinoute/typora-hivacruz-theme
+Authors: Yann Defretin, Kent Pribbernow
+Author URI: https://github.com/kinoute
+Description: A Typora Dark blue theme forked from the "Cobalt" theme.
+Version: 0.4
+Tags: dark, blue, typora
+*/
+
+:root {
+  --text-color: #ffffff;
+  --bg-color: #152638;
+  --side-bar-bg-color: #152638;
+  --control-text-color: #a9aaab;
+  --primary-color: #efb752;
+  --primary-btn-border-color: #f0b752;
+  --active-file-text-color: inherit;
+  --active-file-border-color: #f0b752;
+  --active-file-bg-color: #152638;
+  --primary-btn-text-color: #f0b752;
+  --window-border: 0 solid #152638;
+  --item-hover-bg-color: #152638;
+  --item-hover-text-color: #f0b752;
+  --meta-content-color: #f0b752;
+  --search-select-text-color: #f0b752;
+  --control-text-color: var(--text-color);
+  --control-text-hover-color: var(--text-color);
+  --heading-char-color: #f0b752;
+  --active-toggle-btn-color: #192133;
+  --blur-text-color: rgba(200, 200, 200, 0.33);
+  --rawblock-edit-panel-bd: #192133 !important;
+/*  --select-text-bg-color: #192133;*/
+  /* Mermaid diagrams*/
+  --mermaid-node-color: #b87f62 !important;
+  --mermaid-node-border: #bd7958;
+  --mermaid-contrast-color: #afe61d;
+}
+
+.pane-group {
+  background-color: var(--bg-color);
+}
+
+.dropdown-menu {
+  background-color: #1a283d!important;
+  border-color: #313d50!important;
+}
+
+body {
+  height: 100%;
+  line-height: 1.6;
+}
+
+#write {
+  background: #152638;
+  font-family: "Nunito",sans-serif;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px;
+  padding-bottom: 100px;
+  position: static;
+  width: 90%;
+}
+
+.md-end-block.md-heading.md-focus {
+  color: #afe61d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #afe61d;
+  font-family: "Nunito",sans-serif;
+  font-weight: 400;
+  padding: 20px 0;
+}
+
+html {
+  font-size: 12px;
+}
+
+#write {
+  text-align: justify;
+}
+
+#write>h1:first-child {
+  margin-top: 2.75rem;
+}
+
+#write>h2:first-child {
+  margin-top: 1.75rem;
+}
+
+#write>h3:first-child {
+  margin-top: 1rem;
+}
+
+#write>h4:first-child {
+  margin-top: .5rem;
+}
+
+h1 {
+  font-weight: 700;
+  line-height: 4rem;
+  margin: 0 0 0;
+  padding: 20px 0;
+  text-align: left;
+  margin-top: 4rem;
+}
+
+h2 {
+  font-weight: 700;
+  line-height: 3rem;
+  margin: 0 0 1rem;
+  padding: 0 0;
+  text-align: left;
+  margin-top: 3rem;
+}
+
+h3, h4 {
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+
+/* Focus Mode */
+
+.on-focus-mode {
+  h1.md-end-block:not(.md-focus):not(.md-focus-container) {
+      color: yellow !important;
+    }
+}
+
+#write>h3.md-focus:before {
+  left: -1.875rem;
+  top: .5rem;
+  padding: 2px;
+}
+
+#write>h4.md-focus:before {
+  left: -1.875rem;
+  top: .3125rem;
+  padding: 2px;
+}
+
+#write>h5.md-focus:before {
+  left: -1.875rem;
+  top: .25rem;
+  padding: 2px;
+}
+
+#write>h6.md-focus:before {
+  left: -1.875rem;
+  top: .125rem;
+  padding: 2px;
+}
+
+.h1, h1 {
+  font-size: 3.25rem;
+}
+
+.h2, h2 {
+  font-size: 2.298rem;
+}
+
+.h3, h3 {
+  font-size: 1.625rem;
+}
+
+.h4, h4 {
+  font-size: 1.25rem;
+}
+
+.h5, h5 {
+  font-size: 1.15rem;
+}
+
+.h6, h6 {
+  font-size: 1rem;
+}
+
+#write>h4.md-focus:before, #write>h5.md-focus:before, #write>h6.md-focus:before {
+  top: 1px;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+table {
+  font-size: 1.25rem;
+}
+
+/*@media screen and (max-width:48em) {
+  blockquote {
+    margin-left: 1rem;
+    margin-right: 0;
+    padding: .5em;
+  }
+  .h1, h1 {
+    font-size: 2.827rem;
+  }
+  .h2, h2 {
+    font-size: 1.999rem;
+  }
+  .h3, h3 {
+    font-size: 1.413rem;
+  }
+  .h4, h4 {
+    font-size: 1.25rem;
+  }
+  .h5, h5 {
+    font-size: 1.15rem;
+  }
+  .h6, h6 {
+    font-size: 1rem;
+  }
+}
+*/
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+#write h1:before, #write h2:before, #write h3:before, #write h4:before, #write h5:before, #write h6:before {
+  border-radius: 0;
+  bottom: 0;
+  color: #517090;
+  float: none;
+  font-size: 1rem;
+  font-variant: "small-caps";
+  font-weight: 700;
+  left: auto;
+  line-height: 20px;
+  padding: 0;
+  position: absolute;
+  right: calc(100% + 10px);
+  vertical-align: baseline;
+}
+
+#write h1 {
+  font-size: 3.2rem;
+  margin: .6rem 0;
+}
+
+#write h1:before {
+  bottom: 2.45rem;
+  content: "H1";
+}
+
+#write h2 {
+  font-size: 2rem;
+  margin: .7rem 0;
+}
+
+#write h2:before {
+  bottom: .5rem;
+  content: "H2";
+}
+
+#write h3 {
+  font-size: 1.6rem;
+  margin: .5rem 0;
+}
+
+#write h3:before {
+  bottom: 1.75rem;
+  content: "H3";
+}
+
+#write h4 {
+  font-size: 1.4rem;
+  margin: .2rem 0;
+}
+
+#write h4:before {
+  content: "H4";
+  bottom: 1.75rem;
+}
+
+#write h5, #write h6 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#write h5:before, #write h6:before {
+  bottom: 1.75rem;
+}
+
+#write h5:before {
+  content: "H5";
+}
+
+#write h6:before {
+  content: "H6";
+}
+
+h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+  border: 0;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write pre, #write p {
+  width: auto;
+}
+
+a, .md-def-url {
+  color: #27c3ca;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #27c3ca;
+  text-decoration: underline;
+}
+
+/* Summary */
+
+.md-toc {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.md-toc-content {
+  background-color: #192133!important;
+  border: 1px solid #324560;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*.md-toc-inner:hover {
+  text-decoration: none;
+}*/
+
+#write div.md-toc-tooltip {
+  background-color: #192133!important;
+  border: 1px solid #324560;
+  padding-left: 5px;
+  font-size: 1.4rem;
+  color: #ff8e30;
+}
+
+.md-toc:focus .md-toc-content {
+  border: 1px solid #324560;
+}
+
+.md-delete-toc {
+  color: white;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 8px;
+  line-height: 1.25rem;
+  vertical-align: top;
+  border-top: 1px solid #324560;
+}
+
+table th {
+  font-weight: 700;
+}
+
+table thead th {
+  vertical-align: bottom;
+}
+
+table caption+thead tr:first-child th, table caption+thead tr:first-child td, table colgroup+thead tr:first-child th, table colgroup+thead tr:first-child td, table thead:first-child tr:first-child th, table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table tbody+tbody {
+  border-top: 2px solid #324560;
+}
+
+table tr th {
+  border: 1px solid #324560;
+  border-bottom: solid 2px #324560;
+  border-bottom: 0;
+  font-weight: 700;
+  margin: 0;
+  padding: 10px 16px;
+}
+
+table tr td {
+  background: #192534;
+  border: 1px solid #324560;
+  margin: 0;
+  padding: 10px 16px;
+}
+
+table tr th:first-child, table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child, table tr td:last-child {
+  margin-bottom: 0;
+}
+
+table {
+  padding: 0;
+  word-break: initial;
+}
+
+table tr {
+  border-top: 1px solid #324560;
+  margin: 0;
+  padding: 0;
+}
+
+thead {
+  background-color: #192133;
+  color: #ff8e30;
+}
+
+table tr th {
+  border: 1px solid #324560;
+  border-bottom: solid 2px #ccc;
+  border-bottom: 0;
+  font-weight: 700;
+  margin: 0;
+  padding: 10px 16px;
+}
+
+table tr td {
+  background: #192534;
+  border: 1px solid #324560;
+  margin: 0;
+  padding: 10px 16px;
+}
+
+table tr th:first-child, table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child, table tr td:last-child {
+  margin-bottom: 0;
+}
+
+table tr:nth-child(2n), table tr:nth-child(1n) td {
+  background-color: #152638;
+}
+
+table tr:nth-child(2n), table tr:nth-child(2n) td {
+  background-color: #192133;
+}
+
+.md-fences, tt {
+  border-radius: 3px;
+  color: #b9bcba;
+  font-size: .9em;
+  padding: 0;
+}
+
+code {
+  background-color: #6952b6;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 2;
+  padding: 5px 7px 2px 7px;
+}
+
+.md-fences {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 6px;
+  padding-top: 8px;
+}
+
+.md-task-list-item>input {
+  background: #1a283d;
+  margin-left: -1.3em;
+}
+
+/*@media print {
+  html {
+    font-size: 13px;
+  }
+  table, pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}*/
+
+#write pre.md-meta-block {
+  background-color: #1a283d;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 100%;
+  line-height: 1.45;
+  margin-top: 0!important;
+  padding: 1rem;
+}
+
+.mathjax-block>.code-tooltip {
+  bottom: .375rem;
+}
+
+.md-mathjax-midline {
+  background: #fafafa;
+}
+
+#write>h3.md-focus:before {
+  left: -2.5625rem;
+  top: 1.675rem;
+}
+
+#write>h4.md-focus:before, #write>h5.md-focus:before, #write>h6.md-focus:before {
+  left: -2.5625rem;
+  top: 1.285714286rem;
+}
+
+.md-image>.md-meta {
+  border-radius: 3px;
+  color: inherit;
+  font-size: .9em;
+  padding: 2px 0 0 4px;
+}
+
+.md-tag {
+  color: #70bfd9;
+  opacity: 1;
+}
+
+/*
+.CodeMirror-lines {
+  padding: 4px 0;
+}
+*/
+
+.code-tooltip {
+  background: #152638;
+  border: 1px solid #324560;
+  box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+  /*margin-right: 13px!important;*/
+}
+
+.dropdown-menu {
+  color: #70c0d8;
+  margin-right: 5px;
+}
+
+code, .md-fences {
+  padding: .3em;
+  font-size: .9em;
+  margin-left: .2em;
+  margin-right: .2em;
+}
+
+.md-fences {
+  margin: 0 0 20px;
+  font-size: 1.145em;
+  padding: 0;
+  padding-top: .4em;
+}
+
+.task-list {
+  padding-left: 0;
+}
+
+.task-list-item {
+  padding-left: 2.125rem;
+}
+
+.task-list-item input {
+  top: 3px;
+}
+
+.task-list-item input:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #324560;
+  background-color: #192133!important;
+  margin-left: 0;
+  margin-top: -.5rem;
+}
+
+.task-list-item input:checked:before, .task-list-item input[checked]:before {
+  content: "\2713";
+  font-size: 1.2125rem;
+  line-height: .9375rem;
+  margin-top: -1rem;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  .task-list-item input:before, .task-list-item input:checked:before, .task-list-item input[checked]:before {
+    margin-top: -.2rem;
+  }
+}
+
+blockquote .md-end-block.md-heading {
+  color: inherit;
+}
+
+blockquote .md-end-block.md-heading:before {
+  content: '' !important;
+}
+
+blockquote {
+  margin: 0 0 1.11111rem;
+  padding: .5rem 1.11111rem 0 1.05556rem;
+  border-left: 2px solid #b87f62;
+}
+
+blockquote, blockquote p {
+  line-height: 1.6;
+  color: #b87f62;
+}
+
+.MathJax_Display {
+  font-size: 1em !important;
+  margin-top: .5em;
+  margin-bottom: 0;
+}
+
+.md-math-block .MathJax_SVG_Display {
+  font-size: 1.4rem;
+}
+
+
+/* Edit Math Blocks */
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+  font-size: 1.2rem;
+}
+
+.md-rawblock-control .CodeMirror.cm-s-inner {
+  border: 0px;
+}
+
+/* Inline Math Editing */
+.md-inline-math script {
+  color: #f0b752;
+}
+
+.md-math-tex inline-math-svg {
+  font-size: 1.4rem;
+}
+
+.md-rawblock-panel .code-tooltip {
+  border: 0px;
+}
+
+.md-rawblock-input {
+  font-size: 1.2rem;
+}
+
+/* mathjax edit panel*/
+.md-rawblock-before {
+    border-top-left-radius: 6px;
+}
+
+.md-rawblock-after {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Inline Math */
+.MathJax_SVG {
+  font-size: 1.4rem;
+}
+
+.MathJax_SVG:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.md-rawblock>.md-rawblock-container {
+    transition: 0.5s;
+}
+
+.md-rawblock>.md-rawblock-tooltip {
+    transition: 0.5s;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.md-rawblock:hover>.md-rawblock-tooltip {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+}
+
+p.mathjax-block, .mathjax-block {
+  padding-bottom: 0;
+}
+
+.mathjax-block>.code-tooltip {
+  bottom: 5px;
+  box-shadow: none;
+}
+
+.md-image>.md-meta {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.md-image>img {
+  margin-top: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+  padding-left: 4px;
+}
+
+#typora-source {
+  color: #555;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+  color: #555;
+}
+
+.md-image-pick-file-btn, .md-image-input-src-btn {
+  background-color: #212431;
+}
+
+.md-image-btn.selected, .md-image-btn:hover, .md-image-pick-file-btn:hover, .md-image-input-src-btn:hover {
+  color: #f0b752 !important;
+  background-color: #212431 !important;
+}
+
+.searchpanel-search-option-btn {
+  background-color: #192133!important;
+  border: 1px solid #324560;
+}
+
+.searchpanel-search-option-btn.active {
+  color: #ddd;
+  border: 1px solid #ddd;
+}
+
+.searchpanel-search-option-btn:hover {
+  border: 1px solid #f0b752;
+}
+
+#md-searchpanel {
+  border-bottom: 0 solid #324560;
+  font-family: "Nunito",sans-serif;
+}
+
+#md-searchpanel input {
+  background-color: #192133!important;
+  border: 1px solid #324560;
+}
+
+#md-searchpanel .btn {
+  border: 1px solid #324560;
+  font-size: 11px;
+}
+
+#md-searchpanel .btn:hover {
+  color: #f0b752;
+}
+
+#md-notification:before {
+  top: 14px;
+}
+
+#md-notification {
+  background: #192133;
+  font-size: 14px;
+  border-bottom: 0;
+}
+
+#md-notification .ty-enter-mode-warning-header {
+  color: #f0b752;
+}
+
+#md-notification p, #md-notification .btn, #md-notification label {
+  font-size: 14px!important;
+}
+
+.megamenu-menu-panel .btn {
+  border: 1px solid #ccc;
+}
+
+.on-focus-mode blockquote {
+  border-left-color: rgba(85,85,85,.12);
+}
+
+header, .context-menu, .megamenu-content, footer {
+  font-family: "Nunito",sans-serif;
+}
+
+.megamenu-opened header {
+  background-image: none;
+}
+
+.file-node-content .fa-caret-right, .file-node-content .fa-caret-down {
+  color: #f0b752;
+}
+
+.active-tab-files {
+  background-color: #212431!important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+  background-color: #212431!important;
+  border-top: 0 solid #090b10;
+}
+
+.sidebar-tabs {
+  border-bottom: 0;
+}
+
+.megamenu-menu-header {
+  border-bottom: 1px solid #090b10;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover, .megamenu-menu-list li a.active {
+  background: #212431!important;
+}
+
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state {
+  visibility: visible;
+  background: #212431!important;
+}
+
+.mac-seamless-mode #typora-sidebar {
+  background-color: #212431;
+  border-right: 0 solid #090c12;
+  font-weight: 400;
+  font-family: Nunito,sans-serif;
+}
+
+.sidebar-footer-item:hover {
+  background-color: inherit;
+}
+
+.sidebar-tab.active {
+  color: #afe61d;
+  font-weight: 700;
+}
+
+.file-node-icon, .file-node-open-state {
+  color: #27c3ca;
+}
+
+.fa-file-text-o:before {
+  color: #f0b752!important;
+}
+
+.md-lang {
+  color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+  --item-hover-bg-color: #152638;
+  color: #efb752;
+}
+
+hr {
+  background-color: #f0b752;
+  border: 0 none;
+  box-sizing: content-box;
+  height: 2px;
+  margin: 16px 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+input {
+  color: #82bed6;
+}
+
+#searchpanel-word-option-btn, #find-and-replace-icon-word, #find-and-replace-icon-case, .searchpanel-search-option-btn, .icon, .glyphicon .popover, .popover-title {
+  color: #82bed6!important;
+  fill: #82bed6!important;
+}
+
+#md-notification .btn {
+  border: 0;
+}
+
+.long-btn:hover {
+  background-color: #82bed6;
+}
+
+.show-word-count #footer-word-count {
+  background: #000;
+}
+
+#recent-file-panel-action-btn {
+  background-color: #82bed6;
+}
+
+.dropdown-menu .divider {
+  border-color: #303d50;
+}
+
+.ty-preferences .window-content {
+  background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+  background: #152638;
+  color: #fff;
+}
+
+.cm-s-inner {
+  border: 1px solid #324560;
+  border-radius: .25rem;
+  padding: .5rem .2rem;
+}
+
+.cm-s-inner .cm-link, .cm-s-inner.cm-link {
+  color: #27c3ca;
+}
+
+.cm-s-inner .cm-header {
+  color: #afe61d;
+}
+
+.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
+  background-color: #192133!important;
+  border: 1px solid #324560;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  border: 0;
+  color: #6d8a88;
+  width: 5ch;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+  border-left: solid thin #f8f8f2!important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+  color: #6d8a88;
+  width: 4ch!important;
+}
+
+.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line::-moz-selection, .cm-s-inner .CodeMirror-line>span::selection, .cm-s-inner .CodeMirror-line>span::-moz-selection, .cm-s-inner .CodeMirror-line>span>span::selection, .cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+  background: rgba(255,255,255,.1);
+}
+
+.cm-s-inner span.cm-comment {
+  color: #b87f62;
+  font-style: normal;
+}
+
+.cm-s-inner span.cm-string, .cm-s-inner span.cm-string-2 {
+  color: #afe61d;
+}
+
+.cm-s-inner span.cm-number {
+  color: #00acf6;
+}
+
+.cm-s-inner span.cm-variable {
+  color: #ffffff;
+}
+
+.cm-s-inner span.cm-variable-2 {
+  color: #ffffff;
+}
+
+.cm-s-inner span.cm-def {
+  color: #ffffff;
+}
+
+.cm-s-inner span.cm-operator {
+  color: #ff8e30;
+}
+
+.cm-s-inner span.cm-keyword {
+  color: #ff8e30;
+}
+
+.cm-s-inner span.cm-atom {
+  color: #bd93f9;
+}
+
+.cm-s-inner span.cm-meta {
+  color: #f8f8f2;
+}
+
+.cm-s-inner span.cm-tag {
+  color: #00A1F0;
+}
+
+.cm-s-inner span.cm-attribute {
+  color: #FF712E
+}
+
+.cm-s-inner span.cm-qualifier {
+  color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+  color: #66d9ef;
+}
+
+.cm-s-inner span.cm-builtin {
+  color: #27c3ca;
+}
+
+.cm-s-inner span.cm-variable-3 {
+  color: #b9bcba;
+}
+
+.cm-s-inner span.cm-type {
+  color: #ffb86c;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+  background: rgba(255,255,255,.1);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-selected, .cm-s-inner .CodeMirror-selectedtext {
+  background: #3b4254!important;
+  color: inherit;
+  text-shadow: none;
+}
+
+#write ol, #write ul {
+  padding-left: 2rem;
+/*  margin: .5rem 0;*/
+}
+
+#write ol>li, #write ul>li {
+  color: #f0b752;
+  font-weight: 700;
+}
+
+#write ul>li ul>li {
+  list-style-type: circle;
+  background-color: transparent;
+  font-weight: 700;
+}
+
+
+#write ol>li>*, #write ul>li>* {
+  color: #fff;
+  font-weight: 400;
+}
+
+#write ol>li>*:not(ol):not(ul), #write ul>li>*:not(ol):not(ul) {
+  padding-left: .25rem;
+}
+
+#write ul {
+  list-style-type: disc;
+}
+
+ul:first-child, ol:first-child {
+  margin-top: 0;
+}
+
+ul:last-child, ol:last-child {
+  margin-bottom: 0;
+}
+
+.typora-export li {
+  font-size: 14px!important;
+  text-align: justify!important;
+}
+
+sup.md-footnote {
+  background-color: #FC4349;
+  color: white;
+  font-weight: 700;
+}
+
+.md-def-footnote .md-def-name:before, .md-def-footnote .md-def-name:after {
+  content: '';
+}
+
+.md-def-footnote .md-def-name {
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #FC4349;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.footnotes {
+  opacity: 1;
+}
+
+.md-def-footnote .md-def-content {
+  font-size: 15px;
+}
+
+a.reversefootnote {
+    color: #f0b752;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+mark {
+  background-color: #ff8e30;
+  border-radius: 4px;
+  color: #000;
+  line-height: 1;
+  padding: 5px 7px 2px 7px;
+}
+
+.cm-s-typora-default {
+  font-family: "Nunito",sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
+  color: #afe61d;
+}
+
+/*.cm-s-typora-default .cm-header1 {
+  font-size: 3.2rem;
+  margin: .6rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header2 {
+  font-size: 1.8rem;
+  margin: .7rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header3 {
+  font-size: 1.4rem;
+  margin: .5rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header4 {
+  font-size: 1.2rem;
+  margin: .2rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header5, .cm-s-typora-default .cm-header6 {
+  font-size: 1rem;
+  margin: 0;
+  width: auto;
+}*/
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+  border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+  color: #9fb1ff;
+}
+
+.cm-s-typora-default .cm-string {
+  color: #a7a7d9;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+  color: #848695;
+  font-style: italic;
+}
+
+.cm-s-typora-default .cm-link, .cm-s-typora-default .cm-tag {
+  color: #27c3ca;
+}
+
+.cm-s-typora-default .cm-string {
+  color: #f0b752;
+}
+
+/*.cm-s-typora-default .cm-comment {
+  background-color: #6952b6;
+  border-radius: 4px;
+  color: #fff!important;
+  line-height: 1;
+  padding: 5px 7px 2px 7px;
+}*/
+
+.cm-s-typora-default pre.cm-s-inner {
+  background-color: #192133!important;
+}
+
+.cm-s-typora-default .cm-atom {
+  color: #b87f62;
+}
+
+.CodeMirror-activeline .cm-atom {
+  color: white!important;
+}
+
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background: #FC4349;
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+  color: #8aa1e1;
+}
+
+.CodeMirror-activeline .CodeMirror-gutter-elt {
+  color: white !important;
+}
+
+/* mega menu */
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color1);
+}
+
+.megamenu-content {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.megamenu-menu-list {
+  background-color: #212431 !important;
+}
+
+.megamenu-opened .megamenu-content {
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+}
+
+/* mega menu sidebar*/
+.megamenu-menu {
+    background-color: #212431;
+}
+
+/* return button in mega menu */
+#megamenu-menu-sidebar .menu-style-btn {
+    border: 0px;
+}
+
+/* remove divider in mega menu */
+.megamenu-menu-header {
+}
+
+/* return button color in mega menu */
+.megamenu-menu-header #megamenu-menu-header-title, .megamenu-menu-header #megamenu-menu-header-title:before {
+    color: #afe61d;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+  background-color: #152638;
+}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover {
+}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover #megamenu-menu-header-title {
+}
+
+/* long button in mega menu */
+.long-btn {
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* Mermaid Diagrams */
+
+.titleText, .pieTitleText {
+  fill: var(--mermaid-contrast-color);
+  font-size: 2rem;
+  font-family: Nunito,sans-serif;
+  font-weight: 400;
+}
+
+
+/* Node Overview */
+
+/* Node text */
+.grid .tick text, .taskText, text.actor, .node .label,
+.taskTextOutsideRight, .taskTextOutsideLeft, .labelText , .loopText, g.classGroup text {
+  color: var(--text-color);
+  fill: var(--text-color);
+  stroke: black;
+  stroke-width: .05px;
+
+  .title{
+    font-weight: 600;
+  }
+}
+
+/* Node color */
+.actor, .task, .node rect,
+.node circle, .node ellipse, .node polygon, g.classGroup rect {
+  fill: var(--mermaid-node-color);
+  stroke: var(--mermaid-node-border);
+  color: var(--text-color);
+}
+
+/* Node Labels (Notes & On path) */
+.edgeLabel foreignObject {
+  color: black;
+  background-color: var(--primary-color);
+  stroke: var(--primary-btn-border-color);
+  stroke-width: 1px;
+  height: 20px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.note {
+  fill: var(--primary-color);
+  stroke: var(--primary-btn-border-color);
+}
+
+.noteText {
+  color: var(--text-color);
+}
+
+/* Class diagram specific */
+g.classGroup line{
+  stroke: var(--text-color);
+}
+
+.classLabel .box  {
+  stroke: none;
+  stroke-width: 0;
+  fill: var(--primary-color);
+  opacity: 1;
+}
+
+svg[id^="mermaidChart"] .composition, svg[id^="mermaidChart"] .aggregation,
+svg[id^="mermaidChart"] .dependency, svg[id^="mermaidChart"] .relation {
+  stroke: var(--text-color);
+}
+
+.classLabel .label {
+  fill: black;
+}
+
+#extensionStart, #extensionEnd, #compositionStart, #compositionEnd,
+#aggregationStart, #aggregationEnd, #dependencyStart, #dependencyEnd {
+  fill: var(--text-color);
+  stroke: var(--text-color);
+}
+
+/* Gantt Specific */
+svg[id^="mermaidChart"] .today {
+  stroke: var(--mermaid-contrast-color);
+}
+
+/* Pie Chart Specific */
+
+svg[id^="mermaidChart"] g path {
+  stroke: var(--text-color);
+}
+
+text.slice {
+  fill: var(--text-color);
+}
+
+.legend text {
+  fill: var(--text-color);
+}
+/* End mermaid */
+
+
+
+
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><h1><a name="muscle-flex-panel-gallery-muscle" class="md-header-anchor"></a>💪<span> Flex Panel Gallery </span>💪</h1><hr /><p><span>tags: +flexbox +css +html +webdev</span></p><p><strong><span>In this tutorial we create a gallery of images that expand upon clicking and have a nice animation</span></strong></p><p><span>The end result will look something like this:</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/FlexPanelEnd.gif" referrerpolicy="no-referrer" alt="FlexPanelEnd"></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#muscle-flex-panel-gallery-muscle">💪 Flex Panel Gallery 💪</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n444"><a class="md-toc-inner" href="#changing-layout">Changing Layout</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n51"><a class="md-toc-inner" href="#flexbox">Flexbox</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n443"><a class="md-toc-inner" href="#using-flex-from-flexbox">Using flex from Flexbox</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n42"><a class="md-toc-inner" href="#centering-the-items-by-thirds">Centering the Items by Thirds</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n85"><a class="md-toc-inner" href="#flex-container-inside-of-a-flex-container">Flex Container Inside of a Flex Container</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n91"><a class="md-toc-inner" href="#stacking-the-words-vertically">Stacking the Words Vertically</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n148"><a class="md-toc-inner" href="#hiding-elements">Hiding Elements</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n155"><a class="md-toc-inner" href="#using-classes-for-animation">Using Classes for Animation</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n190"><a class="md-toc-inner" href="#adding-classes-to-top-and-bottom-text">Adding Classes to Top and Bottom Text</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n178"><a class="md-toc-inner" href="#adding-classes-to-increase-font-size-when-clicked">Adding Classes to Increase Font Size When Clicked</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n196"><a class="md-toc-inner" href="#adding-functionality-with-javascript">Adding Functionality with JavaScript</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n219"><a class="md-toc-inner" href="#arrowup-increasing-font-size-and-expanding-panel-on-click-arrowup">⬆️ Increasing Font Size and Expanding Panel on Click ⬆️</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n223"><a class="md-toc-inner" href="#top-and-bottom-text-sliding-in-on-click">Top and Bottom Text Sliding in on Click</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n276"><a class="md-toc-inner" href="#span-stylecolor-red&nbsp;smilingimp-the-wrong-way-smilingimp&nbsp;span">&nbsp;😈 The Wrong Way 😈&nbsp;</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n271"><a class="md-toc-inner" href="#sparkles-the-right-way-sparkles">✨ The Right Way ✨</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n423"><a class="md-toc-inner" href="#filefolderfiles-filefolder">📁Files 📁</a></span></p></div><p>&nbsp;</p><p><span>We&#39;re creating panels that expand when clicked and shown more text with animation</span></p><p><span>The starting point looks like this:</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_22_57.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_22_57"></p><p><span>Currently there&#39;s no interaction with this page, they are just static pictures.</span></p><p>&nbsp;</p><h2><a name="changing-layout" class="md-header-anchor"></a><span>Changing Layout</span></h2><hr /><h3><a name="flexbox" class="md-header-anchor"></a><span>Flexbox</span></h3><p>❓<span> </span><strong><span>What is Flexbox?</span></strong></p><blockquote><p><em><span>Learn more about it here: </span><a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/' target='_blank' class='url'>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></em></p></blockquote><p><span>We want to display our panels side by side, so we&#39;ll add flex to the CSS in the </span><code>.panels</code><span> selector:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="css"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>5</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-qualifier">.panels</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-property">min-height</span>: <span class="cm-number">100vh</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-property">overflow</span>: <span class="cm-atom">hidden</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-property">display</span>: <span class="cm-atom">flex</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 105px;"></div><div class="CodeMirror-gutters" style="height: 105px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><span>Now our page looks like this (gross, I know):</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_28_10.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_28_10"></p><p>&nbsp;</p><h3><a name="using-flex-from-flexbox" class="md-header-anchor"></a><span>Using flex from Flexbox</span></h3><p><strong><span>Obviously we&#39;re not done with the sizing yet...</span></strong></p><p><span>To fix the sizing, let&#39;s go to each individual panel and tell them to split the width of the page amongst themselves.</span></p><ul><li><span>To do this, we&#39;ll add </span><code>flex: 1;</code><span> to the </span><code>.panel</code><span> selector</span></li></ul><p><span>After adding this to the CSS, the page now looks like this:</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_33_22.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_33_22"></p><p>😄<span> That looks much better now</span></p><h3><a name="centering-the-items-by-thirds" class="md-header-anchor"></a><span>Centering the Items by Thirds</span></h3><p><span>We want to only show the middle third of each picture and then </span><code>onClick</code><span> display the rest.</span></p><p>❗️<span> </span><strong><span>Adding a red border to each of the flex items will make debugging easier, so let&#39;s do that</span></strong></p><p><span>Add </span><code>border: 1px solid red</code><span> to the CSS in the </span><code>.panel &gt; *</code><span> selector</span></p><p><span>Here&#39;s a visual of this implementation:</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_42_44.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-13_42_44"></p><p>&nbsp;</p><p><span>Now we want to center the words (flex items) in each picture. Add </span><code>justify-content: center;</code><span>  and </span><code>align-items: center;</code><span> to the </span><code>.panel</code><span> selector.  </span></p><h3><a name="flex-container-inside-of-a-flex-container" class="md-header-anchor"></a><span>Flex Container Inside of a Flex Container</span></h3><p><span>To make things even more confusing, we want to also make </span><code>.panel</code><span> a flex container. </span></p><p>📖<span> </span><span style='color: yellow'><strong><span>An element in CSS can be both a flex-item and a flex-container</span></strong></span></p><p><span>To implement this, we&#39;ll add </span><code>display: flex</code><span> to the CSS </span><code>.panel</code><span> selector.</span></p><p><span>We didn&#39;t see much happening after adding </span><code>justify-content</code><span> and </span><code>align-items</code><span> in the previous step, but now when we added </span><code>display: flex;</code><span> to the </span><code>.panel</code><span> selector the page changes a bit. Remember, the flex container is </span><code>.panels</code><span> and the flex items are </span><code>.panel</code><span>. </span><strong><span>But</span></strong><span> </span><code>.panel</code><span> is also a flex-container now.</span></p><h3><a name="stacking-the-words-vertically" class="md-header-anchor"></a><span>Stacking the Words Vertically</span></h3><p><span>At this step the words are displaying horizontally:</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_03_03.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_03_03"></p><p>&nbsp;</p><p><span>We want to make the words stack on top of each other. Add </span><code>flex-direction: column;</code><span> to </span><code>.panel</code><span> to stack them vertically.</span></p><p><span>The result:</span></p><p><img src="/home/slf/Downloads/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_05_42.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_05_42"></p><p>&nbsp;</p><p><span>In the </span><code>.panel p</code><span> CSS selector, add </span><code>flex: 1 0 auto;</code><span> to space the words out vertically into thirds.</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_08_39.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_08_39"></p><p>&nbsp;</p><p><span>Also add </span><code>display: flex;</code><span> (adding yet another nested flexbox container), </span><code>justify-content: center;</code><span>, and </span><code>align-items: center;</code><span> to the  </span><code>.panel &gt; *</code><span> selector to center all the text in the red boxes shown above.</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_13_56.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_13_56"></p><p>&nbsp;</p><h2><a name="hiding-elements" class="md-header-anchor"></a><span>Hiding Elements</span></h2><hr /><p><span>We want to hide all the text that isn&#39;t in the very middle of the page so when we click on it a cool animation will play. To do this, we&#39;ll use </span><code>transform</code><span>.</span></p><p>📖<span> To read more about </span><code>transform</code><span>, go here: </span><a href='https://www.w3schools.com/cssref/css3_pr_transform.asp' target='_blank' class='url'>https://www.w3schools.com/cssref/css3_pr_transform.asp</a></p><p><span>Create a new CSS selector called </span><code>.panel &gt; *:first-child</code><span>. Inside the body of the selector add </span><code>transform: translateY(-100%);</code><span> This code will make each of the first children (words at top) off the screen. </span></p><p><span>Now to do the same thing for the text at the bottom of the screen, we&#39;ll create another CSS selector </span><code>.panel &gt; *:last-child</code><span> and add </span><code>transform: translateY(100%);</code><span> inside the body of the selector.</span></p><p><span>Both the top and bottom text are now off the screen:</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_25_13.png" referrerpolicy="no-referrer" alt="screencapture-file-home-slf-Documents-Learning-JavaScript-FlexPanelGallery-html-2020-06-26-14_25_13"></p><p>&nbsp;</p><p>❓<span> </span><strong><span>Why are we moving the elements off the screen?</span></strong></p><blockquote><p><em><span>Remember, we want an animation where upon clicking a panel the top and bottom text slide onto the screen, so for now we only want the center text.</span></em></p></blockquote><p>&nbsp;</p><h2><a name="using-classes-for-animation" class="md-header-anchor"></a><span>Using Classes for Animation</span></h2><hr /><p><strong><span>Okay, technically it&#39;s transitioning and not animating, but whatever</span></strong></p><h3><a name="adding-classes-to-top-and-bottom-text" class="md-header-anchor"></a><span>Adding Classes to Top and Bottom Text</span></h3><p><span>When a panel has a class of </span><code>open-active</code><span> we will move the text back onto the screen. </span></p><p><span>This code does that:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="css"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>7</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.panel.open-active</span> &gt; *:<span class="cm-variable-3">first-child</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-property">transform</span>: <span class="cm-atom">translateY</span>(<span class="cm-number">0</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.panel.open-active</span> &gt; *:<span class="cm-variable-3">last-child</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-property">transform</span>: <span class="cm-atom">translateY</span>(<span class="cm-number">0</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 147px;"></div><div class="CodeMirror-gutters" style="height: 147px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><span>This means that we should add the class </span><code>open-active</code><span> to a panel when it is clicked on. The red border border we added earlier to </span><code>.panel &gt; *</code><span> is no longer necessary, so we can delete that.</span></p><p><strong><span>The animation will not work right now because we haven&#39;t added the functionality</span></strong></p><h3><a name="adding-classes-to-increase-font-size-when-clicked" class="md-header-anchor"></a><span>Adding Classes to Increase Font Size When Clicked</span></h3><p><span>We had previously added </span><code>flex: 1;</code><span> to a CSS selector. This meant that each panel took up the same amount of space. But when a user clicks on a panel, we want the font to increase and the panel to take up </span><strong><span>5 times</span></strong><span> the amount of space it did previously.  </span></p><p><span>We&#39;ll add </span><code>flex: 5</code><span> to </span><code>.panel.open</code><span> in our CSS:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="css"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>4</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.panel.open</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-property">font-size</span>: <span class="cm-number">40px</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-property">flex</span>: <span class="cm-number">5</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 84px;"></div><div class="CodeMirror-gutters" style="height: 84px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p>&nbsp;</p><h2><a name="adding-functionality-with-javascript" class="md-header-anchor"></a><span>Adding Functionality with JavaScript</span></h2><hr /><p><span>Now we&#39;ll add the functionality so that something actually occurs when we click on a panel</span></p><h3><a name="arrowup-increasing-font-size-and-expanding-panel-on-click-arrowup" class="md-header-anchor"></a>⬆️<span> Increasing Font Size and Expanding Panel on Click </span>⬆️</h3><p><span>Inside the </span><script><span> tag, let&#39;s select all the panels with</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">const</span> <span class="cm-def">panels</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">querySelectorAll</span>(<span class="cm-string">'.panel'</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 42px;"></div><div class="CodeMirror-gutters" style="height: 42px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><span>Then we&#39;ll create a function that toggles the class when a panel is clicked on:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">toggleOpen</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">this</span>.<span class="cm-property">classList</span>.<span class="cm-property">toggle</span>(<span class="cm-string">'open'</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 63px;"></div><div class="CodeMirror-gutters" style="height: 63px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><span>And now we&#39;ll use a </span><code>forEach</code><span> loop to listen for a click on each of the panels:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">panels</span>.<span class="cm-property">forEach</span>((<span class="cm-def">panel</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">panel</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-variable">toggleOpen</span>));</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 42px;"></div><div class="CodeMirror-gutters" style="height: 42px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p>&nbsp;</p><p>❓<span> </span><strong><span>Never seen a </span><code>forEach</code><span> loop?</span></strong></p><blockquote><p><em><span>Read more about them here: </span><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach' target='_blank' class='url'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach</a></em></p></blockquote><p>&nbsp;</p><p><span>This loops over all the panels and adds an </span><code>eventListener</code><span> that waits for a click. When a click occurs, the function </span><code>toggleOpen</code><span> is called.</span></p><p><span>Now when we click on a panel it shows the font-size increasing and the picture expanding.</span></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/FlexPanelPart1.gif" referrerpolicy="no-referrer" alt="FlexPanelPart1"></p><p><strong><span>But we&#39;re not done!</span></strong></p><p><span>We still want to have the top and bottom text slide in when a panel is clicked.</span></p><h3><a name="top-and-bottom-text-sliding-in-on-click" class="md-header-anchor"></a><span>Top and Bottom Text Sliding in on Click</span></h3><p><span>We&#39;re going to add another </span><code>forEach</code><span> loop that looks at each panel and listens for a </span><code>transitionend</code><span> event and toggle the </span><code>open-active</code><span> class when the transition event ends</span></p><p><span>We&#39;ll write the </span><code>toggleActive</code><span> function:</span></p><h4><a name="span-stylecolor-red&nbsp;smilingimp-the-wrong-way-smilingimp&nbsp;span" class="md-header-anchor"></a><span style="color: red;"><span> </span>😈<span> The Wrong Way </span>😈<span> </span></span></h4><p>❗️<span> </span><strong><span>You might be tempted to write the </span><code>toggleActive</code><span> class like this...</span></strong></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>4</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">//wrong, don't do this!</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">toggleActive</span>() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">this</span>.<span class="cm-property">classList</span>.<span class="cm-property">toggle</span>(<span class="cm-string">"open-active"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 84px;"></div><div class="CodeMirror-gutters" style="height: 84px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p>❌<span> </span><strong><span>But this is incorrect, because there are multiple </span><code>transitionend</code><span> events.</span></strong><span> </span>❌</p><h4><a name="sparkles-the-right-way-sparkles" class="md-header-anchor"></a>✨<span> The Right Way </span>✨</h4><p><span>We have to pass the event to the </span><code>toggleActive</code><span> function</span></p><p><span>Inside of the </span><code>toggleActive</code><span> function, lets put </span><code>console.log(e.propertyName);</code><span> to find the transition event we want. </span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">toggleActive</span>(<span class="cm-def">e</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">e</span>.<span class="cm-property">propertyName</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 63px;"></div><div class="CodeMirror-gutters" style="height: 63px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><strong><span>Make sure to click on a panel on the page and then view the console.</span></strong></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/flexGalleryConsole.png" referrerpolicy="no-referrer" alt="flexGalleryConsole"></p><p>&nbsp;</p><p><span>After doing this, we find out that </span><code>font-size</code><span> and </span><code>flex-grow</code><span> show up in the console. Both these are being transitioned! The </span><code>flex-grow</code><span> transition comes from when we added </span><code>flex: 5;</code><span> to </span><code>.panel.open</code><span> in our CSS.</span></p><p><span>We want to transition the text in once the panel is done expanding, so we use an </span><em><span>if statement</span></em><span> to check if the </span><code>flex</code><span> transition has ended. The whole function ends up looking like this:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>8</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">toggleActive</span>(<span class="cm-def">e</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">e</span>.<span class="cm-property">propertyName</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">/*we're using includes because some browsers list the property as flex, while others list it as flex-grow (poopy Safari)</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"> &nbsp;  */</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">e</span>.<span class="cm-property">propertyName</span>.<span class="cm-property">includes</span>(<span class="cm-string">"flex"</span>)) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">this</span>.<span class="cm-property">classList</span>.<span class="cm-property">toggle</span>(<span class="cm-string">"open-active"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 35px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 210px;"></div><div class="CodeMirror-gutters" style="height: 210px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><span>You can delete the </span><code>console.log</code><span> statement now if you&#39;d like.</span></p><p><span>Now let&#39;s add the final part, an </span><code>eventListener</code><span> for the </span><code>transitionend</code><span> event:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="js"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="js"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7px; left: 48.3906px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -41px; width: 41px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 35px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">panels</span>.<span class="cm-property">forEach</span>((<span class="cm-def">panel</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">panel</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"transitionend"</span>, <span class="cm-variable">toggleActive</span>));</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 63px;"></div><div class="CodeMirror-gutters" style="height: 63px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 43px;"></div></div></div></div></pre><p><strong><span>Annnd it&#39;s done! Your page should now look like this:</span></strong></p><p><img src="/home/slf/Documents/Learning JavaScript/FlexPanelGallery/FlexPanelEnd.gif" referrerpolicy="no-referrer" alt="FlexPanelEnd"></p><p>&nbsp;</p><h2><a name="filefolderfiles-filefolder" class="md-header-anchor"></a>📁<span>Files </span>📁</h2><hr /><p><strong><span>You can find the files for this project here:</span></strong></p><p><span>Starting file:  </span><a href='../../Learning JavaScript/FlexPanelGalleryStart.html'><span>FlexPanelGalleryStart.html</span></a><span> </span></p><p><span>End result file:  </span><a href='../../Learning JavaScript/FlexPanelGallery.html'><span>FlexPanelGallery.html</span></a><span> </span></p><p>&nbsp;</p><p><a href='#Flex-Panel-Gallery'><span>To Top of Page</span></a></p><p>&nbsp;</p></div>
+</body>
+</html>
