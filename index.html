@@ -1,0 +1,655 @@
+<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Salem Fenn</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="74c4fcb1-791e-41e1-beab-6dbf375926ce" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1579403124614-197f69d8187b?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 21.750000000000004%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://img.icons8.com/ios/250/000000/resume.png"/></div><h1 class="page-title">Salem Fenn</h1></header><div class="page-body"><blockquote id="0a0003cd-8283-47b2-aceb-256a19ba99cb" class="">I&#x27;m a junior software developer living in Spokane, WA. My strengths lie in web application development. Always looking forward to learning something new and diving deeper into what I&#x27;ve learned! </blockquote><div id="6c63ae0c-bc81-4a0a-85a9-f582210265fa" class="column-list"><div id="89762e87-99dd-4d1e-bb04-270981cc437d" style="width:12.5%" class="column"><figure id="b070e415-3a9d-4766-a2ab-ac65bdd86267" class="image"><a href="https://img.icons8.com/ios/250/000000/user-manual.png"><img style="width:84px" src="https://img.icons8.com/ios/250/000000/user-manual.png"/></a></figure></div><div id="8b1948b0-5f74-4c1f-bb91-493ff7476a62" style="width:87.5%" class="column"><h1 id="12e9c67e-7864-438a-b2c6-197250d132e9" class="">Contact Information</h1></div></div><div id="aceb13c9-0887-4d87-8596-da1e4b693ff1" class="column-list"><div id="2fe05149-9f71-4fca-81d6-36fecb14cda2" style="width:6.25%" class="column"><figure id="9b4b9838-9a00-4d81-bdff-2582c99318e7" class="image"><a href="images/gmail2.svg"><img style="width:36px" src="images/gmail2.svg"/></a></figure></div><div id="7a474b2c-58b0-44cb-8311-56006b273d09" style="width:93.75%" class="column"><p id="2d2f3301-9561-4a2c-a806-fe6170b59e93" class="">salemlfenn@gmail.com</p></div></div><div id="2e29a381-cbaf-4495-a325-4023e3f03d20" class="column-list"><div id="b9346379-e5f4-4e93-8252-777d8f664d28" style="width:6.25%" class="column"><figure id="b7e011dc-8c58-4ab6-9b7e-b8b6168d66cf" class="image"><a href="images/github.svg"><img style="width:60px" src="images/github.svg"/></a></figure></div><div id="596c6836-130a-436c-8303-aca2abcc5f8b" style="width:93.75%" class="column"><p id="b4c427f7-47cc-48a9-846c-86fdde93e558" class=""><a href="https://github.com/salemlf">GitHub</a></p></div></div><div id="730d385a-4fff-482f-b047-559d42763fe9" class="column-list"><div id="7e540df9-6686-4daf-b67a-0f5f9f78d150" style="width:6.25%" class="column"><figure id="0277c047-c2af-4ea9-82b9-498e59e7a560" class="image"><a href="images/linkedin.svg"><img style="width:48px" src="images/linkedin.svg"/></a></figure></div><div id="0063e601-513f-4cb9-9bfb-a4ec7fc0e21b" style="width:93.75%" class="column"><p id="0a3f7183-a1f7-49de-a8da-1c33ef348e61" class=""><a href="www.linkedin.com/in/salem-fenn">LinkedIn</a></p></div></div><p id="4f6b5d6d-96db-4748-8d83-1de6172eccc1" class="">
+</p><hr id="1661034f-820d-40c7-b7c7-67c5c8c44d46"/><p id="428484b6-9ddf-416c-be5b-df7cde2c20dd" class="">
+</p><div id="f2486349-399f-4460-bfa0-33d46e96c8fd" class="column-list"><div id="bdcb931e-7eda-4568-a7e2-3e45b21eb16d" style="width:12.5%" class="column"><figure id="25375fd4-2bd4-4f3c-bbe4-84ba95dc390c" class="image"><a href="https://img.icons8.com/ios/250/000000/businessman.png"><img style="width:84px" src="https://img.icons8.com/ios/250/000000/businessman.png"/></a></figure></div><div id="c5ead16c-5c63-45f2-84eb-bf306fe7ddf1" style="width:87.5%" class="column"><h1 id="a77348c0-0b0b-433f-be2c-caf588e42d92" class="">Work experience </h1><p id="f3ff8866-2af9-41c0-b932-39a37ddeed61" class="">
+</p></div></div><h2 id="69c3124e-540e-4871-8b02-452393a83b9e" class="">Web Developer Intern</h2><p id="32fdb7e5-5623-46a6-b960-2f18242f0ae2" class="block-color-gray"><em><strong>Moving Mountains Tutoring and Mentoring</strong></em><em>, Miramar, FL (Remote) – Nov 2020 - Present</em></p><p id="a739bf8c-9007-4c81-89aa-2968a8b71790" class="">Developed company website using Wordpress</p><ul id="4e52fe14-549f-4360-9083-07ac4d1aca7c" class="bulleted-list"><li>Used <strong>PHP</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS </strong>on daily basis</li></ul><ul id="26834954-d72b-4d4a-a227-22023a23a1ab" class="bulleted-list"><li>Developed plugins and themes</li></ul><ul id="393088c5-5e8e-43a7-80b5-9bc2ad0d219c" class="bulleted-list"><li>Performed debugging of desktop and mobile sites</li></ul><p id="0ef4eba7-1e2c-472a-bc39-0611fec9c244" class="">
+</p><h2 id="ba55a102-a251-4b85-a4f9-8b55464a438b" class="">Covid Accessioner</h2><p id="e0a52e54-a79a-4c82-b04f-a67dab95a90c" class="block-color-gray"><em><strong>Incyte Diagnostics</strong></em><em>, Spokane Valley, WA – Nov 2020 - Present</em></p><p id="07fe9979-0f2b-4364-9626-355d5d88eb08" class="">Performed medical data entry for Covid cases</p><ul id="4784d692-e1e9-4f18-bdd6-21757298b315" class="bulleted-list"><li>Entered patient information into database to prepare samples for testing</li></ul><ul id="2d738b1f-2d9f-45d7-9558-f8891a247916" class="bulleted-list"><li>Sorted samples while using appropriate PPE</li></ul><ul id="c469ae4f-8c2f-476c-9c56-37e331c9db00" class="bulleted-list"><li>Performed quality assurance checks on data to verify accuracy</li></ul><ul id="5ab5833a-0998-4bdb-ad80-8eecca817182" class="bulleted-list"><li>Remember and implement client-specific requirements</li></ul><p id="22101292-00d6-4b42-810b-92cb1e072c37" class="">
+</p><h2 id="f6c59d9b-d919-4fd1-b67e-9ef0011bb694" class="">Computer Science Tutor</h2><p id="a0856e1c-9fa6-4e52-bbf5-ebce3d1d5cb3" class="block-color-gray"><em><strong>Eastern Washington University</strong></em><em>, Cheney, WA – Jan 2020 - June 2020</em></p><p id="e7d8b3f3-e914-4eca-bc0b-31bbc766ab63" class="">Helped students with programming problems, languages, and computer science classes including:</p><ul id="996ed176-e3ff-4898-82b9-699a3cae2d3e" class="bulleted-list"><li><strong>Python</strong>, <strong>Java</strong>, <strong>C</strong>, <strong>C#</strong>, <strong>JavaScript</strong>, <strong>SQL</strong></li></ul><ul id="65d05d8b-81b3-443e-83aa-db7f8ed5f184" class="bulleted-list"><li>Data Structures, Algorithms, Programming Principles I and II, C &amp; Unix</li></ul><ul id="7855e094-c1ce-481d-89c7-110227ec05ca" class="bulleted-list"><li>Preparing students for the APE (Advancement Programming Exam)</li></ul><p id="ccd60133-0f18-4b9a-9bfc-e0e1d30bd454" class="">
+</p><p id="1f607178-cb66-4272-8964-e13c1da847fb" class=""><em>Earlier job history can be provided upon request</em></p><p id="a2e5f51f-c836-49e3-895a-0fe3977f22e6" class="">
+</p><hr id="bcfc0cb5-96e8-49e3-a505-b055a3ab8185"/><p id="6a402630-30e0-498a-8229-c68a9858e7d0" class="">
+</p><div id="310bf6cc-a565-47f2-b0db-1a506353698e" class="column-list"><div id="49b1831b-eced-497c-86cc-a0840137f7af" style="width:12.5%" class="column"><figure id="f360e2c6-8a95-47fc-a5c4-361b268124db" class="image"><a href="https://img.icons8.com/ios/250/000000/swiss-army-knife.png"><img style="width:72px" src="https://img.icons8.com/ios/250/000000/swiss-army-knife.png"/></a></figure></div><div id="1f678375-93ce-4a28-be99-9de4ecb3a4c3" style="width:87.5%" class="column"><h1 id="449a457a-c87d-4c0a-948a-c28d63da5fbd" class="">Skills</h1><p id="17ca5454-2a25-470c-8a99-e1a93f703452" class="">
+</p></div></div><div id="b34db050-143d-466a-9a5f-46f9bcf0c664" class="column-list"><div id="f50dafcd-5062-4a81-80ef-c3d9628a18ee" style="width:31.25%" class="column"><p id="e60ba281-cff7-4406-ba80-8e8edb98dff5" class="">
+</p></div><div id="832aed50-a9f7-4715-a5cb-373260f1fa9e" style="width:68.75%" class="column"><h2 id="31ad629a-78e3-43e3-a420-110ad4ec80f1" class="">&lt;&gt; Technology &lt;/&gt;</h2></div></div><p id="7788b0e8-aaad-40b1-a2e4-3cf34b04c88d" class="">
+</p><div id="487bf87d-2906-4e70-b78c-a6381d5f4dc3" class="column-list"><div id="ff2d2761-4605-4d4b-84b5-d79d26053d12" style="width:50%" class="column"><figure id="73b68b05-351e-4cca-bb79-763d6a1729c3" class="image"><a href="images/java.png"><img style="width:60px" src="images/java.png"/></a></figure><h3 id="eff73a27-8849-4053-968e-c8e812c405ec" class="">Java ⭐⭐⭐⭐⭐</h3><p id="07b7105f-84c0-47c7-a87d-9dd4635bfa73" class="">🕔 Years of Experience: 4</p><p id="ad265102-ecbd-4315-90a6-04b89905f47a" class="">Java is the main programming language taught at EWU, so the majority of my classes used it. I&#x27;ve worked with Java for 4 years now and have created simple games, <strong>Android</strong> applications, and many other programs. </p><p id="b5d210d0-d04d-4879-b46f-b7206b6ffd75" class="">
+</p><p id="64a3f32f-3886-4324-a8d4-10ccb3c39bbe" class="">
+</p><figure id="e6254e3d-4efe-4597-89cc-bb9bd816a155" class="image"><a href="images/html-css.png"><img style="width:108px" src="images/html-css.png"/></a></figure><h3 id="125d3cb6-38c4-463b-91e1-c84a7e99f661" class="">HTML/CSS ⭐⭐⭐⭐⭐</h3><p id="3a0dd16f-8579-4c9f-9251-173b01117b5d" class="">🕔 Years of Experience: 4</p><p id="895203d0-2561-48e2-9343-f77e4c7aeebb" class="">As a teenager I messed around with HTML and CSS, but didn&#x27;t start seriously learning until I began college. It&#x27;s been fun to see how these languages have changed over the years. I definitely used to find them boring compared to JavaScript, but the added functionality over the years has changed my mind. </p><p id="539d4e97-16e6-4f07-9f25-7b4dc43e0c92" class="">
+</p></div><div id="0fd8676f-15a8-4f21-8a82-58e6718ae69a" style="width:50%" class="column"><figure id="8fd2f250-85a9-40fd-9302-0b204d3c8f18" class="image"><a href="images/js.png"><img style="width:48px" src="images/js.png"/></a></figure><h3 id="1656a3bd-16c6-4e9d-96f6-7b7a561da9dd" class="">Javascript ⭐⭐⭐⭐⭐ </h3><p id="1dec4a77-8a05-4693-9235-bacf5842e263" class="">🕔 Years of Experience: 4</p><p id="63141ee7-9dba-433f-ba0f-c9e00931dc64" class="">My personal favorite programming language. Since web and mobile development are my passion, I&#x27;ve used it consistently over the years. My senior project at EWU used JavaScript for the front-end (specifically <strong>React</strong>) and using it in that bigger project gave me a good amount of debugging experience. I love that there are so many libraries and frameworks to choose from with JavaScript.</p><p id="7a3d33cf-16e5-4fca-9eb4-fd6abb1d124f" class="">
+</p><figure id="95ab1bd3-9488-4034-ba6c-d5c277a1afe7" class="image"><a href="images/csharp.png"><img style="width:48px" src="images/csharp.png"/></a></figure><h3 id="e0973f76-b3d0-49bb-9cc1-19c977032ce6" class="">C# ⭐⭐⭐⭐</h3><p id="d74e3012-2be5-4df5-8011-125123cb4a03" class="">🕔 Years of Experience: 3</p><p id="3e9949a7-713b-4802-b7f2-e8120a85cd9f" class="">My first exposure to C# was in a .NET class I took years ago. Since I had used Java previously, the syntax already looked very familiar to me. I also used it in my senior project for my degree; my team and I wrote the backend of our web application in C# (.NET Core).</p><p id="f978d268-947b-47cc-9ea7-dcc2002ea089" class="">
+</p></div></div><div id="ac43fa09-e485-4add-b9d4-cafddb7422b8" class="column-list"><div id="1e1a14dd-b51c-46e4-bdbb-7c5e3b7ce4f2" style="width:20.833333333333332%" class="column"><p id="d472982a-e7a6-4749-9617-55546c7df513" class="">
+</p></div><div id="093da71d-d966-498f-bea0-d2c6879859f9" style="width:62.500000000000014%" class="column"><figure id="4316235b-34ee-4887-89a7-602371acd004" class="image"><a href="images/git.svg"><img style="width:60px" src="images/git.svg"/></a></figure><h3 id="be24faf6-9111-4399-8267-58b450036e52" class=""> Git ⭐⭐⭐⭐</h3><p id="aa3cb66c-32a2-4b76-837f-97db6bbb86b2" class="">🕔 Years of Experience: 3</p><p id="69d8e74f-743a-4d19-827a-9e8d29e6aad8" class="">At the very beginning of my computer science degree, I was clueless on how Git worked. At that time I hadn&#x27;t worked on any programming group projects and didn&#x27;t understand how valuable version control software is. I haven&#x27;t mastered it yet, but I can more than get the gi(s)t of how it works (apologies for the bad pun). </p></div><div id="ef543a14-039d-4358-b8a9-4e2ad735f713" style="width:16.666666666666675%" class="column"><p id="dc211472-d18a-417c-a7e3-45ff6bfba7e3" class="">
+</p></div></div><p id="e9f13170-8bea-4b55-b06c-c952a7a74efd" class="">
+</p><h3 id="a4d4ca8f-7b6b-462b-b67e-fc7b3a83b780" class="">Other Programming Languages/Tech I&#x27;m Familiar With</h3><p id="43b54355-fed3-453c-8835-2a4d27bfbc38" class="">
+</p><div id="8750cd9d-2439-49e3-a6fe-6eddfea0a264" class="column-list"><div id="f48b3687-80a6-4c57-85d1-72b7a2616235" style="width:16.666666666666664%" class="column"><figure id="97da5dfc-f5d0-444d-b2c4-615496540914" class="image"><a href="images/php-48.png"><img style="width:48px" src="images/php-48.png"/></a></figure></div><div id="5bf56393-4aeb-43c8-8ca2-4eceff23127c" style="width:18.749999999999993%" class="column"><figure id="dcd6b4bd-a56b-488a-b707-7673983ee030" class="image"><a href="images/c-programming.svg"><img style="width:48px" src="images/c-programming.svg"/></a></figure></div><div id="8bcb8f73-6e5e-4268-b1ac-9f9f301d1e24" style="width:16.666666666666664%" class="column"><figure id="ee8c29ef-0e2f-4428-a1c7-c976f3f4256e" class="image"><a href="images/python.svg"><img style="width:48px" src="images/python.svg"/></a></figure></div><div id="274deacf-a806-45d0-9970-bc3eef14c3b9" style="width:18.75%" class="column"><figure id="2902395a-b53c-48e4-b63c-c6aac9c248e5" class="image"><a href="images/sql-48.png"><img style="width:48px" src="images/sql-48.png"/></a></figure></div><div id="314cc5c1-a7d8-4b18-a0dd-31b3290f3db8" style="width:16.66666666666666%" class="column"><figure id="184bf150-ed03-475d-ba5e-94f6f6881b58" class="image"><a href="images/office-365.svg"><img style="width:48px" src="images/office-365.svg"/></a></figure></div><div id="0a881ef5-ca64-4c2c-95a4-516ce6bf046a" style="width:12.50000000000002%" class="column"><figure id="d451e29c-eea0-41d7-83e4-70083f19ba48" class="image"><a href="images/react-native.svg"><img style="width:48px" src="images/react-native.svg"/></a></figure></div></div><p id="ff2abe00-f716-4e2c-9710-7db02666bd92" class="">
+</p><hr id="786b9541-8267-431a-a361-da3f58d2d10a"/><p id="bcf142fa-57ea-406f-aefa-51e7932e32c1" class="">
+</p><div id="d03aef5b-8b0f-4fb2-bb73-1cb546943ada" class="column-list"><div id="59db93e1-eaaa-4812-b2a7-2c5d3696a358" style="width:12.5%" class="column"><figure id="a64d3524-0cf7-4acd-8f3b-70568be4bf8b" class="image"><a href="https://img.icons8.com/ios/250/000000/classroom.png"><img style="width:108px" src="https://img.icons8.com/ios/250/000000/classroom.png"/></a></figure></div><div id="e60e5769-d7a6-4666-9896-94053e2ed112" style="width:87.5%" class="column"><h1 id="1ed36484-883d-4d23-b4cd-3b66472a99fe" class="">Education </h1><p id="5d66406d-91ad-4ba1-a859-63e6bfbd9422" class="">
+</p></div></div><h2 id="32ae29d1-278b-4358-b3de-ac1fbf07fbb1" class="">🖥️ <strong>Bachelor of Computer Science</strong></h2><p id="1acdd68b-29e9-4f72-a1c0-563dbe0f06d7" class="block-color-gray">2017 - <em>2021 (Graduating in March 2021)</em></p><p id="2ac96500-5734-4a51-8289-840cf7b97189" class="">Eastern Washington University - Cheney, WA</p><p id="e0eeca57-3d4f-4529-bcf0-0e7219240b0f" class="">
+</p><h2 id="3dabb929-654c-4601-a6b2-6994ff11ac15" class="">📔 Associate of Arts and Sciences</h2><p id="f1901d73-da93-4951-ab13-290e39af3f8d" class="block-color-gray">2014 - 2016</p><p id="ebb8608e-025f-4568-9e56-938341b66d72" class="">Big Bend Community College - Moses Lake, WA</p><p id="183a8eee-b7fd-4403-a32f-80c60936e5ac" class="">
+</p><hr id="4714ed35-82a1-4b04-b63b-b6cd0ad47366"/><p id="e991b796-cd3a-48f0-bc6b-de44de3af777" class="">
+</p><div id="326d6067-381d-4e33-b780-449dd0c750ae" class="column-list"><div id="cbad7123-31bf-4a6f-8c78-5a6c167d27b6" style="width:12.5%" class="column"><figure id="31c6e9cc-4fd2-468a-b1a4-94fe5ab7ed90" class="image"><a href="https://img.icons8.com/ios/250/000000/group-of-projects.png"><img style="width:108px" src="https://img.icons8.com/ios/250/000000/group-of-projects.png"/></a></figure></div><div id="7d3d6843-9321-4f25-8653-1f1a94a7e8de" style="width:87.5%" class="column"><h1 id="9368cd1b-bdd9-4c88-82af-88abe533afb4" class="">Projects and Tutorials</h1><p id="39d1ee93-fa85-4ef4-ae75-41c7c0dfc23d" class="">
+</p></div></div><ul id="301b46e1-b604-4097-b319-a576be39b797" class="bulleted-list"><li><a href="https://salemlf.github.io/Flex%20Panel%20Gallery%20HTML.html">Flex Panel Gallery Tutorial</a></li></ul><ul id="14b868b4-fdd5-4888-8a6c-029519062e2e" class="bulleted-list"><li><a href="https://codepen.io/salemlf/pen/GRjbOZB">Random Quote Generator</a></li></ul><ul id="755729e5-6944-4fe2-bd2f-6b0eb23dcf6d" class="bulleted-list"><li><a href="https://jsfiddle.net/392ebd0n/169/">Markdown Previewer (In Progress)</a></li></ul><ul id="efa59764-dca9-40b1-8b46-ec6eeca667b9" class="bulleted-list"><li>Landing Page (In Progress)</li></ul><hr id="cef07c12-b339-4945-8cf0-afbadcb3b33b"/><p id="63d77b36-bc88-4df2-b214-2ef1dd88c1fe" class="">
+</p><div id="fee3bb4e-e921-41df-a58b-f4cfb1238c50" class="column-list"><div id="a90408e9-f897-4187-bed1-e029d03df742" style="width:12.5%" class="column"><figure id="07419915-48eb-4a0b-87ca-2ff144130ac2" class="image"><a href="https://img.icons8.com/ios/250/000000/chat.png"><img style="width:96px" src="https://img.icons8.com/ios/250/000000/chat.png"/></a></figure></div><div id="3cb3ea42-627f-4cea-9929-03a583701a43" style="width:87.5%" class="column"><h2 id="0f8b7e4e-e4f6-43af-9476-a8f325ea3014" class="">Languages</h2></div></div><h3 id="5a64712e-0ec5-4071-a4aa-d79788d7daac" class="">English</h3><p id="f870c36b-d080-430b-bade-f22df85acce6" class="">Native speaker</p></div></article></body></html>
