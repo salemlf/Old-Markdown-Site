@@ -4,38 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Noto+Sans+KR:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="app/styles/style.css" />
     <title>Juno</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header flex flex-fd-col flex-ac-sb">
       <nav class="flex flex-jc-sb flex-ai-c">
-        <div>
-          <!-- Juno logo here -->
-          <!-- TODO: not showing because background color -->
-          <a href="/" class="header__logo">
-            <img src="/app/images/juno-logo.svg" alt="Juno Logo" />
-          </a>
-          <!-- Login button here -->
-          <!-- Sign up button here -->
+        <a href="/" class="header__logo">
+          <img
+            class="header__logo-img"
+            src="/app/images/juno-logo.svg"
+            alt="Juno Logo"
+          />
+        </a>
+        <div class="flex flex-fd-row flex-jc-fe">
+          <button class="login-btn header__btn">Login</button>
+          <button class="sign-up-btn header__btn">Sign Up</button>
         </div>
       </nav>
-      <!-- Title "Your live.." here-->
-      <!-- sub-header "Juno is an..." here-->
-      <!-- "Get started" button here -->
-      <!-- Icons and "Get the app today" here -->
+      <div class="get-started flex flex-fd-col">
+        <h1>
+          Your Live &<br />
+          On-Demand Events Platform
+        </h1>
+        <h3>
+          JUNO is an online events platform built to engage <br />
+          with your audience 365 days a year.
+        </h3>
+        <button class="header__btn get-started-btn flex flex-ai-c flex-jc-c">
+          <img src="/app/images/u_play.svg" alt="Play button" />
+          Get Started
+        </button>
+        <!-- Icons and "Get the app today" here -->
+        <div class="flex flex-jc-c">
+          <img
+            class="app-logo"
+            src="/app/images/u_android.svg"
+            alt="Android logo"
+          />
+          <img
+            class="app-logo"
+            src="/app/images/u_apple.svg"
+            alt="Apple logo"
+          />
+          <h4>Get the app today</h4>
+        </div>
+      </div>
     </header>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
-      exercitationem atque numquam itaque, dignissimos incidunt recusandae?
-      Veritatis atque dolorum iste iusto totam nemo ex nobis id, assumenda
-      quaerat esse dolores! Sit sequi, vero cumque ullam aspernatur sint ex
-      ipsum aliquam exercitationem ipsam dicta voluptatem eveniet accusantium
-      totam voluptatibus id. Laboriosam ad iure distinctio reprehenderit eaque
-      sed saepe. Dolores, dolorum ea. Ex voluptatem magnam in! Voluptatibus eos
-      dicta iusto fugit, hic ipsa quia inventore impedit corrupti. Officiis
-      nulla facilis rerum, recusandae iste eligendi ad ducimus quidem
-      aspernatur, itaque perspiciatis, eius quo.
-    </p>
+    <section class="connect"></section>
+    <section class="motivators"></section>
+    <section class="partners"></section>
+    <section class="demo"></section>
   </body>
 </html>

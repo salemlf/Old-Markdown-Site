@@ -30,12 +30,23 @@ body {
       justify-content: space-between;
     }
 
+    &-jc-sa {
+      justify-content: space-around;
+    }
+
     &-jc-c {
       justify-content: center;
     }
 
+    &-jc-fe {
+      justify-content: flex-end;
+    }
+
     &-ai-c {
       align-items: center;
+    }
+    &-ai-fe {
+      align-items: flex-end;
     }
 
     &-wrap {
@@ -49,5 +60,31 @@ body {
     &-fd-col {
       flex-direction: column;
     }
+
+    &-ac-sb {
+      align-content: space-between;
+    }
+
+    &-ac-sa {
+      align-content: space-around;
+    }
+  }
+
+  h1 {
+    color: #ffffff;
+    font-family: $notoSansJP;
+    font-weight: 700;
+    font-size: 100px;
+    letter-spacing: -5px;
+    line-height: 99%;
+    text-shadow: 0px 30px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    font-family: $notoSansKR;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
   }
 }
