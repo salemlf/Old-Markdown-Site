@@ -130,7 +130,15 @@ body h3 {
 }
 
 body h4 {
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 18px;
+}
+
+body p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 @media only screen and (max-width: 1110px) {
@@ -276,9 +284,9 @@ body h4 {
   top: 1430px;
   bottom: 0;
   width: 100%;
-  height: 1468px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#e9e9e9));
-  background-image: linear-gradient(#f8f8f8, #e9e9e9);
+  height: 868px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#ffffff));
+  background-image: linear-gradient(#f8f8f8, #ffffff);
   -webkit-transform: skewY(-7deg);
           transform: skewY(-7deg);
   -webkit-transform-origin: top left;
@@ -335,17 +343,125 @@ body h4 {
 .motivators {
   width: 100%;
   height: 1268px;
-  background-color: #e9e9e9;
-  margin-top: -395px;
+  background-color: #ffffff;
+  margin-top: -985px;
   position: absolute;
   z-index: 2;
 }
 
+.motivators h2 {
+  font-size: 48px;
+  letter-spacing: -1px;
+  line-height: 60px;
+}
+
+.motivators h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -1px;
+}
+
 .motivators h4 {
-  color: black;
+  color: #000000;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -1px;
 }
 
 .motivators .motivate-content {
-  margin-top: -595px;
+  margin-top: -490px;
+  margin-left: 60px;
+  margin-right: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.motivators .motivate-left {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 20px;
+}
+
+.motivators .motivate-left .how-it-works {
+  padding-top: 175px;
+}
+
+.motivators .motivate-left .motivator-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 60px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.motivators .motivate-left .motivator-item .motivate-title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.motivators .motivate-left .motivator-item .motivate-info {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 22px;
+}
+
+.motivators .motivate-left .motivator-item span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #dcdcdc;
+  line-height: 128px;
+}
+
+.motivators .motivate-right {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 2fr 1fr 2fr 2fr;
+      grid-template-rows: 1fr 2fr 1fr 2fr 2fr;
+}
+
+.motivators .motivate-right .motivate-concert {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 5;
+  z-index: 2;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.motivators .motivate-right .motivate-meeting {
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 6;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  z-index: 1;
+  grid-column-end: 32;
+}
+
+.motivators button {
+  background-color: #c7169c;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */

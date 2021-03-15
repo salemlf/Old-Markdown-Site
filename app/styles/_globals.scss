@@ -106,7 +106,15 @@ body {
   }
 
   h4 {
+    font-family: $notoSansKR;
     font-size: 18px;
+  }
+
+  p {
+    font-family: $notoSansKR;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   //media queries for smaller screens
