@@ -51,10 +51,22 @@ body .flex-jc-fe {
           justify-content: flex-end;
 }
 
+body .flex-jc-fs {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 body .flex-ai-c {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body .flex-ai-fs {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 body .flex-ai-fe {
@@ -278,33 +290,52 @@ body h4 {
   margin-left: 60px;
 }
 
+.connect h2 {
+  margin-top: 106px;
+}
+
+.connect .spacer-left {
+  width: 30%;
+}
+
+.connect .devices {
+  top: 1103px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex: 65%;
+      flex: 65%;
+}
+
+.connect .spacer-right {
+  width: 5%;
+}
+
 .connect img {
   position: absolute;
   z-index: 2;
-  width: 1087px;
-  height: 514px;
+  max-height: 65%;
+  max-width: 65%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media only screen and (max-width: 1110px) {
   .connect img {
     content: url("/app/images/devices-medium.png");
-    width: 556px;
-    height: 262px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .connect img {
     content: url("/app/images/devices-smaller.png");
-    width: 200px;
-    height: 94px;
   }
 }
 
 .motivators {
   width: 100%;
-  background-color: #e9e9e9;
   height: 1268px;
+  background-color: #e9e9e9;
   margin-top: -868px;
 }
 /*# sourceMappingURL=style.css.map */

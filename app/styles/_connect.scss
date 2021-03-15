@@ -23,30 +23,43 @@
     margin-left: 60px;
   }
 
+  h2 {
+    margin-top: 106px;
+  }
+
+  .spacer-left {
+    width: 30%;
+  }
+
+  .devices {
+    top: 1103px;
+    flex-grow: 1;
+    flex: 65%;
+  }
+
+  .spacer-right {
+    width: 5%;
+  }
+
+  // //TODO: make margin-left 30% (338px / 1262px)
   img {
     position: absolute;
     z-index: 2;
-    //573
-    //837 x 264
-    width: 1087px;
-    height: 514px;
+    max-height: 65%;
+    max-width: 65%;
+    object-fit: cover;
   }
 
-  //TODO: add media query at 1110px width to decrease image size
-  //media queries for smaller screens
+  //using smaller images for better performance
   @media only screen and (max-width: 1110px) {
     img {
       content: url("/app/images/devices-medium.png");
-      width: 556px;
-      height: 262px;
     }
   }
 
   @media only screen and (max-width: 767px) {
     img {
       content: url("/app/images/devices-smaller.png");
-      width: 200px;
-      height: 94px;
     }
   }
 }
