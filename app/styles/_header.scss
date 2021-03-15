@@ -96,16 +96,13 @@
 
   h4 {
     margin: 175px 0px 25px 0px;
-    font-size: 18px;
   }
 }
 
 //media queries for smaller screens
 @media only screen and (max-width: 767px) {
   .header {
-    /* The file size of this background image is 93% smaller
-  to improve page load speed on mobile internet connections */
-    //TODO: add smaller background-image here
+    width: 100%;
     background: #75346b url("/app/images/header-background-smaller.png")
       no-repeat fixed center center / cover;
   }
