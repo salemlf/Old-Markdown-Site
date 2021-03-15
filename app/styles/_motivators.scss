@@ -44,8 +44,8 @@
   .motivate-content {
     //TODO: change to shorthand
     margin-top: -490px;
-    margin-left: 60px;
-    margin-right: 60px;
+    // margin-left: 60px;
+    // margin-right: 60px;
     display: grid;
     // grid-template-columns: 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
@@ -114,6 +114,11 @@
 
   @media (max-width: 1074px) {
     .motivate-content {
+      .motivate-left {
+        .how-it-works {
+          padding-top: 0px;
+        }
+      }
       .motivate-right {
         grid-template-rows: 2fr 1fr 2fr 2fr;
         margin-top: 110px;
