@@ -463,5 +463,14 @@ body p {
 .motivators button {
   background-color: #c7169c;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 110px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: 1.5px;
 }
 /*# sourceMappingURL=style.css.map */
