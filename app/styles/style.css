@@ -376,12 +376,19 @@ body p {
   margin-right: 60px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: (minmax(440px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   grid-column-gap: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 768px) {
+  .motivators .motivate-content .motivate-left {
+    display: -ms-grid;
+    display: grid;
+  }
 }
 
 .motivators .motivate-left {
@@ -394,6 +401,13 @@ body p {
   padding-top: 175px;
 }
 
+@media (min-width: 768px) {
+  .motivators .motivate-left .service-item {
+    border-top: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+  }
+}
+
 .motivators .motivate-left .motivator-item {
   display: -ms-grid;
   display: grid;
@@ -403,6 +417,7 @@ body p {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  border-top: 1px solid #efefef;
 }
 
 .motivators .motivate-left .motivator-item .motivate-title {
@@ -428,6 +443,24 @@ body p {
   letter-spacing: -1px;
   color: #dcdcdc;
   line-height: 128px;
+}
+
+@media (max-width: 1074px) {
+  .motivators .motivate-content .motivate-right {
+    -ms-grid-rows: 2fr 1fr 2fr 2fr;
+        grid-template-rows: 2fr 1fr 2fr 2fr;
+    margin-top: 110px;
+  }
+  .motivators .motivate-content .motivate-right .motivate-concert {
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    grid-row-end: 4;
+  }
+  .motivators .motivate-content .motivate-right .motivate-meeting {
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    grid-row-end: 5;
+  }
 }
 
 .motivators .motivate-right {
@@ -466,7 +499,7 @@ body p {
   border: none;
   cursor: pointer;
   padding: 20px;
-  margin-top: 110px;
+  margin: 110px 0px;
   border-radius: 6px;
   color: #ffffff;
   font-size: 16px;
