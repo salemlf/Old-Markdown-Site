@@ -336,6 +336,16 @@ body h4 {
   width: 100%;
   height: 1268px;
   background-color: #e9e9e9;
-  margin-top: -868px;
+  margin-top: -395px;
+  position: absolute;
+  z-index: 2;
+}
+
+.motivators h4 {
+  color: black;
+}
+
+.motivators .motivate-content {
+  margin-top: -595px;
 }
 /*# sourceMappingURL=style.css.map */
