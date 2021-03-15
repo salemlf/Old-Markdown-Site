@@ -4,4 +4,17 @@
 
 .connect {
   min-height: 2126px;
+
+  &__bg {
+    position: absolute;
+    top: 1430px;
+    bottom: 0;
+    // right: 0;
+    // left: 0;
+    width: 100%;
+    height: 1468px;
+    background-image: linear-gradient(#f8f8f8, #e9e9e9);
+    transform: skewY(-7deg);
+    transform-origin: top left;
+  }
 }
