@@ -18,7 +18,7 @@ body {
   padding: 0;
   font-family: "Public Sans", sans-serif;
   line-height: 1.3;
-  font-size: min(max(.5rem, 4vw), 18px);
+  font-size: min(max(.25rem, 4vw), 18px);
   font-weight: 300;
   background-color: #ffffff;
 }
@@ -105,16 +105,30 @@ body .flex-ac-sa {
       align-content: space-around;
 }
 
-body :is(nav, .connect-content, .motivate-content) {
+body :is(nav, .get-started, .connect-content, .motivate-content) {
   margin-left: 60px;
   margin-right: 60px;
+}
+
+@media (max-width: 1074px) {
+  body :is(nav, .get-started, .connect-content, .motivate-content) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 630px) {
+  body :is(nav, .get-started, .connect-content, .motivate-content) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 body h1 {
   color: #ffffff;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
-  font-size: min(max(1rem, 4vw), 100px);
+  font-size: min(max(2.5rem, 4vw), 100px);
   letter-spacing: min(max(-5px, 4vw), 0px);
   line-height: 99%;
   text-shadow: 0px 30px 30px rgba(0, 0, 0, 0.5);
@@ -143,7 +157,7 @@ body h4 {
 body p {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 300;
-  font-size: min(max(1rem, 4vw), 16px);
+  font-size: min(max(.5rem, 4vw), 16px);
   line-height: 20px;
 }
 
@@ -320,22 +334,23 @@ body p {
 }
 
 .motivators h2 {
-  font-size: 48px;
-  letter-spacing: -1px;
+  font-size: min(max(1.5rem, 4vw), 48px);
+  letter-spacing: min(max(-1px, 4vw), 0px);
   line-height: 60px;
 }
 
 .motivators h3 {
-  font-size: 32px;
+  font-size: min(max(1rem, 4vw), 32px);
   font-weight: 700;
   line-height: 38px;
-  letter-spacing: -1px;
+  letter-spacing: min(max(-1px, 4vw), 0px);
 }
 
 .motivators h4 {
   color: #000000;
   font-weight: 300;
   font-size: 24px;
+  font-size: min(max(.75rem, 4vw), 24px);
   line-height: 32px;
   letter-spacing: -1px;
 }
@@ -352,7 +367,7 @@ body p {
           align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 328px) {
   .motivators .motivate-content .motivate-left {
     display: -ms-grid;
     display: grid;
@@ -369,7 +384,7 @@ body p {
   padding-top: 175px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 8px) {
   .motivators .motivate-left .service-item {
     border-top: 1px solid #efefef;
     border-left: 1px solid #efefef;
@@ -379,8 +394,8 @@ body p {
 .motivators .motivate-left .motivator-item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 247px 1fr;
+      grid-template-columns: 247px 1fr;
   grid-column-gap: 60px;
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -391,29 +406,30 @@ body p {
 .motivators .motivate-left .motivator-item .motivate-title {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -ms-grid-columns: 60px 2fr;
+      grid-template-columns: 60px 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
 }
 
 .motivators .motivate-left .motivator-item .motivate-info {
   display: -ms-grid;
   display: grid;
-  margin-top: 22px;
 }
 
-.motivators .motivate-left .motivator-item span {
+.motivators .motivate-left .motivator-item .number h3 {
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 80px;
+  font-size: min(max(2.5rem, 4vw), 80px);
   font-weight: 900;
   letter-spacing: -1px;
   color: #dcdcdc;
   line-height: 128px;
 }
 
-@media (max-width: 1074px) {
+@media (max-width: 1075px) {
   .motivators .motivate-content .motivate-left .how-it-works {
     padding-top: 0px;
   }
@@ -434,24 +450,29 @@ body p {
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 820px) {
   .motivators .motivate-content .motivate-left .how-it-works {
     padding-top: 0px;
   }
   .motivators .motivate-content .motivate-right {
-    -ms-grid-rows: 2fr 1fr 2fr 2fr 2fr;
-        grid-template-rows: 2fr 1fr 2fr 2fr 2fr;
+    -ms-grid-rows: 2fr 1fr 2fr 2fr;
+        grid-template-rows: 2fr 1fr 2fr 2fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     margin-top: 110px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .motivators .motivate-content .motivate-right .motivate-concert {
     -ms-grid-row: 1;
         grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 3;
   }
   .motivators .motivate-content .motivate-right .motivate-meeting {
-    -ms-grid-row: 4;
-        grid-row-start: 4;
-    grid-row-end: 6;
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    grid-row-end: 5;
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 4;
@@ -486,6 +507,42 @@ body p {
       grid-column-start: 2;
   grid-column-end: 5;
   z-index: 1;
+}
+
+.motivators .motivate-right .motivate-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+@media (max-width: 1074px) {
+  .motivators .motivate-right .motivate-img {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    height: 484px;
+    width: 618px;
+  }
+}
+
+@media (max-width: 820px) {
+  .motivators .motivate-right .motivate-img {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    height: 384px;
+    width: 518px;
+  }
 }
 
 .motivators button {
