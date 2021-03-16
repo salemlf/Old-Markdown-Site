@@ -44,10 +44,7 @@
   .motivate-content {
     //TODO: change to shorthand
     margin-top: -490px;
-    // margin-left: 60px;
-    // margin-right: 60px;
     display: grid;
-    // grid-template-columns: 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
     grid-column-gap: 60px;
     align-items: center;
@@ -56,8 +53,6 @@
     @media (min-width: 768px) {
       .motivate-left {
         display: grid;
-        // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        // grid-gap: 0px;
       }
     }
   }
@@ -84,10 +79,7 @@
       align-items: start;
 
       //!added for hr
-      //   padding: 3rem;
-      //   text-align: center;
       border-top: 1px solid #efefef;
-
       //!end of added for hr
 
       .motivate-title {
@@ -136,6 +128,33 @@
     }
   }
 
+  @media (max-width: 630px) {
+    .motivate-content {
+      .motivate-left {
+        //TODO: may not be needed?
+        .how-it-works {
+          padding-top: 0px;
+        }
+      }
+      .motivate-right {
+        grid-template-rows: 2fr 1fr 2fr 2fr 2fr;
+        margin-top: 110px;
+
+        .motivate-concert {
+          grid-row-start: 1;
+          grid-row-end: 4;
+        }
+
+        .motivate-meeting {
+          grid-row-start: 4;
+          grid-row-end: 6;
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+      }
+    }
+  }
+
   .motivate-right {
     display: grid;
     justify-items: center;
@@ -155,8 +174,8 @@
       grid-row-start: 4;
       grid-row-end: 6;
       grid-column-start: 2;
+      grid-column-end: 5;
       z-index: 1;
-      grid-column-end: 32;
     }
   }
 
