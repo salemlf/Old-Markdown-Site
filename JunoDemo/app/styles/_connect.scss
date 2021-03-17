@@ -54,13 +54,13 @@
   //using smaller images for better performance
   @media only screen and (max-width: 1110px) {
     img {
-      content: url("/app/images/devices-medium.png");
+      content: url("/JunoDemo/app/images/devices-medium.png");
     }
   }
 
   @media only screen and (max-width: 767px) {
     img {
-      content: url("/app/images/devices-smaller.png");
+      content: url("/JunoDemo/app/images/devices-smaller.png");
     }
   }
 }
