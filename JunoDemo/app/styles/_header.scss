@@ -1,0 +1,263 @@
+//"Login" font: Averta-Semibold 16px (using Noto Sans KR Bold 700)
+//"Sign Up" button: Averta-Semibold 12px (using Noto Sans KR Bold 700) 1.5px kerning
+
+//h1 font: SF Pro Display, bold, 100px (using Noto Sans JP Bold 700) white
+//also has drop shadow y: 30 blur: 30, black with 50% transparency
+
+//h3,h4, or p text under h1: Averta-Regular 20px (using Noto Sans KR Regular 400)
+
+//text in button ("Get Started"): Averta-Semibold 16px (using Noto Sans KR Bold 700) 26px line-height
+//"Get Started" text and play button are color #696C74
+
+//text next to icons ("Get the app today"): Averta-Semibold 18px (using Noto Sans KR Bold 700)
+
+//linear gradient with top starting with #E9435E and bottom as #1B019F
+
+.header {
+  //TODO: change to rem
+  width: 100%;
+  height: 870px;
+  //display color while loading image
+  background: #75346b url("/app/images/header-background-larger.png") no-repeat
+    fixed center center / cover;
+
+  &__logo-img {
+    margin-top: 34px;
+    width: 110;
+    height: 54px;
+  }
+
+  &__btn {
+    background: Transparent no-repeat;
+    cursor: pointer;
+    outline: none;
+    color: $defaultBtnText;
+    font-family: $notoSansKR;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  .login-btn {
+    border: none;
+    font-size: 16px;
+    margin-top: 34px;
+    transition: transform 400ms ease-in-out;
+    will-change: transform;
+
+    &:hover {
+      transform: translateY(5px);
+      color: #2f2566;
+    }
+  }
+
+  .sign-up-btn {
+    border: 1px solid white;
+    margin-right: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 20px;
+    margin: 34px 0px 0px 25px;
+    transition: transform 400ms ease-in-out;
+    will-change: transform;
+
+    &:hover {
+      transform: translateY(5px);
+      color: #2f2566;
+      border-color: #2f2566;
+    }
+  }
+
+  .get-started-btn {
+    border: none;
+    align-self: center;
+    //TODO: chg to responsive
+    font-size: 16px;
+    line-height: 26px;
+    background-color: #ffffff;
+    color: #696c74;
+    width: 349px;
+    height: 53px;
+    padding: 15px 0px;
+    border-radius: 10px;
+    will-change: transform;
+    transition: transform 300ms, opacity 400ms ease-in-out;
+
+    svg {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      svg path {
+        fill: #c04864;
+      }
+      color: #c04864;
+
+      svg {
+        transform: translateY(-2px);
+      }
+      span {
+        transform: translateY(-2px);
+      }
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+  }
+
+  nav {
+    min-height: 135px;
+  }
+
+  .get-started {
+    min-height: 700px;
+    max-width: 720px;
+    text-align: center;
+    align-self: center;
+  }
+
+  //for app-logo animation below
+  @keyframes wiggle {
+    20% {
+      transform: translateY(4px);
+    }
+    40% {
+      transform: translateY(-4px);
+    }
+    60% {
+      transform: translateY(2px);
+    }
+    80% {
+      transform: translateY(-1px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .app-logo {
+    margin: 172px 7px 0px 0px;
+    will-change: transform;
+    &:hover {
+      animation: wiggle 1s ease;
+      animation-iteration-count: 1;
+    }
+  }
+
+  h3,
+  h4 {
+    color: #ffffff;
+  }
+
+  h3 {
+    margin-top: 25px;
+  }
+
+  h4 {
+    margin: 175px 0px 25px 0px;
+  }
+
+  //disabling animations for users with reduced motion setting
+  @media (prefers-reduced-motion: reduce) {
+    .get-started-btn,
+    .sign-up-btn,
+    .login-btn,
+    .app-logo {
+      transition: none;
+      animation: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .get-started {
+      margin-top: 100px;
+      .get-started-btn {
+        width: 174px;
+        height: 26px;
+        padding: 7px 0px;
+        font-size: 8px;
+
+        img {
+          width: 13px;
+          height: 12px;
+        }
+      }
+    }
+
+    .app-logo {
+      width: 13px;
+      height: 12px;
+      justify-self: flex-start;
+    }
+
+    .app-info h4 {
+      justify-self: flex-end;
+      margin-left: 5px;
+    }
+  }
+
+  @media (max-width: 630px) {
+    .get-started {
+      margin-top: 100px;
+      .get-started-btn {
+        width: 174px;
+        height: 26px;
+        padding: 7px 0px;
+        font-size: 8px;
+
+        img {
+          width: 14px;
+          height: 13px;
+        }
+      }
+    }
+
+    .app-logo {
+      width: 14px;
+      height: 13px;
+      justify-self: flex-start;
+    }
+
+    .app-info h4 {
+      justify-self: flex-end;
+      margin-left: 5px;
+    }
+  }
+
+  @media (max-width: 1074px) {
+    .get-started {
+      margin-top: 100px;
+
+      .get-started-btn {
+        width: 261px;
+        height: 40px;
+        padding: 11px 0px;
+        font-size: 12px;
+
+        img {
+          width: 18px;
+          height: 19px;
+        }
+      }
+    }
+
+    .app-logo {
+      width: 18px;
+      height: 19px;
+      justify-self: flex-start;
+    }
+
+    .app-info h4 {
+      justify-self: flex-end;
+      margin-left: 5px;
+    }
+  }
+}
+
+//media queries for smaller screens
+@media only screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+    background: #75346b url("/app/images/header-background-smaller.png")
+      no-repeat fixed center center / cover;
+  }
+}

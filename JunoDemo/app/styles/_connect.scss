@@ -1,0 +1,66 @@
+//h2 font "Connect your people..." Averta-Semibold 36px (using Noto Sans KR Bold 700)
+//h3 font "Juno equips you...": Averta-Regular 20px (using Noto Sans KR Regular 400)
+//vertical linear overlay starting with #F8F8F8 and ending with #E9E9E9
+//image of devices 233px from top (or 106px from top?)
+
+.connect {
+  width: 100%;
+  min-height: 2126px;
+
+  &__bg {
+    position: absolute;
+    top: 1430px;
+    bottom: 0;
+    width: 100%;
+    height: 868px;
+    background-image: linear-gradient(#f8f8f8, #ffffff);
+    transform: skewY(-7deg);
+    transform-origin: top left;
+    z-index: 1;
+  }
+
+  h2 {
+    margin-top: 106px;
+  }
+
+  .spacer-left {
+    width: 30%;
+  }
+
+  .devices {
+    top: 1103px;
+    flex-grow: 1;
+    flex: 65%;
+  }
+
+  .spacer-right {
+    width: 5%;
+  }
+
+  .devices-container {
+    height: 220px;
+    align-items: center;
+  }
+
+  // //TODO: make margin-left ~30% (338px / 1262px)
+  img {
+    position: absolute;
+    z-index: 2;
+    max-height: 65%;
+    max-width: 65%;
+    object-fit: cover;
+  }
+
+  //using smaller images for better performance
+  @media only screen and (max-width: 1110px) {
+    img {
+      content: url("/app/images/devices-medium.png");
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    img {
+      content: url("/app/images/devices-smaller.png");
+    }
+  }
+}
