@@ -41,6 +41,13 @@
     border: none;
     font-size: 16px;
     margin-top: 34px;
+    transition: transform 400ms ease-in-out;
+    will-change: transform;
+
+    &:hover {
+      transform: translateY(5px);
+      color: #2f2566;
+    }
   }
 
   .sign-up-btn {
@@ -51,6 +58,14 @@
     letter-spacing: 1.5px;
     padding: 20px;
     margin: 34px 0px 0px 25px;
+    transition: transform 400ms ease-in-out;
+    will-change: transform;
+
+    &:hover {
+      transform: translateY(5px);
+      color: #2f2566;
+      border-color: #2f2566;
+    }
   }
 
   .get-started-btn {
@@ -65,9 +80,27 @@
     height: 53px;
     padding: 15px 0px;
     border-radius: 10px;
+    will-change: transform;
+    transition: transform 300ms, opacity 400ms ease-in-out;
 
-    img {
+    svg {
       margin-right: 5px;
+    }
+
+    &:hover {
+      svg path {
+        fill: #c04864;
+      }
+      color: #c04864;
+
+      svg {
+        transform: translateY(-2px);
+      }
+      span {
+        transform: translateY(-2px);
+      }
+      transform: scale(1.1);
+      opacity: 0.9;
     }
   }
 
@@ -82,8 +115,32 @@
     align-self: center;
   }
 
+  //for app-logo animation below
+  @keyframes wiggle {
+    20% {
+      transform: translateY(4px);
+    }
+    40% {
+      transform: translateY(-4px);
+    }
+    60% {
+      transform: translateY(2px);
+    }
+    80% {
+      transform: translateY(-1px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .app-logo {
     margin: 172px 7px 0px 0px;
+    will-change: transform;
+    &:hover {
+      animation: wiggle 1s ease;
+      animation-iteration-count: 1;
+    }
   }
 
   h3,
@@ -97,6 +154,17 @@
 
   h4 {
     margin: 175px 0px 25px 0px;
+  }
+
+  //disabling animations for users with reduced motion setting
+  @media (prefers-reduced-motion: reduce) {
+    .get-started-btn,
+    .sign-up-btn,
+    .login-btn,
+    .app-logo {
+      transition: none;
+      animation: none;
+    }
   }
 
   @media (max-width: 400px) {

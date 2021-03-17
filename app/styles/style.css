@@ -187,6 +187,17 @@ body p {
   border: none;
   font-size: 16px;
   margin-top: 34px;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  will-change: transform;
+}
+
+.header .login-btn:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  color: #2f2566;
 }
 
 .header .sign-up-btn {
@@ -197,6 +208,18 @@ body p {
   letter-spacing: 1.5px;
   padding: 20px;
   margin: 34px 0px 0px 25px;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  will-change: transform;
+}
+
+.header .sign-up-btn:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  color: #2f2566;
+  border-color: #2f2566;
 }
 
 .header .get-started-btn {
@@ -212,10 +235,36 @@ body p {
   height: 53px;
   padding: 15px 0px;
   border-radius: 10px;
+  will-change: transform;
+  -webkit-transition: opacity 400ms ease-in-out, -webkit-transform 300ms;
+  transition: opacity 400ms ease-in-out, -webkit-transform 300ms;
+  transition: transform 300ms, opacity 400ms ease-in-out;
+  transition: transform 300ms, opacity 400ms ease-in-out, -webkit-transform 300ms;
 }
 
-.header .get-started-btn img {
+.header .get-started-btn svg {
   margin-right: 5px;
+}
+
+.header .get-started-btn:hover {
+  color: #c04864;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.header .get-started-btn:hover svg path {
+  fill: #c04864;
+}
+
+.header .get-started-btn:hover svg {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.header .get-started-btn:hover span {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 .header nav {
@@ -231,8 +280,62 @@ body p {
       align-self: center;
 }
 
+@-webkit-keyframes wiggle {
+  20% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  40% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+  60% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  80% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  20% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  40% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+  60% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  80% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .header .app-logo {
   margin: 172px 7px 0px 0px;
+  will-change: transform;
+}
+
+.header .app-logo:hover {
+  -webkit-animation: wiggle 1s ease;
+          animation: wiggle 1s ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 
 .header h3,
@@ -246,6 +349,18 @@ body p {
 
 .header h4 {
   margin: 175px 0px 25px 0px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .get-started-btn,
+  .header .sign-up-btn,
+  .header .login-btn,
+  .header .app-logo {
+    -webkit-transition: none;
+    transition: none;
+    -webkit-animation: none;
+            animation: none;
+  }
 }
 
 @media (max-width: 400px) {
@@ -651,5 +766,27 @@ body p {
   font-size: 16px;
   line-height: 17px;
   letter-spacing: 1.5px;
+  will-change: transform;
+  -webkit-transition: -webkit-transform 450ms;
+  transition: -webkit-transform 450ms;
+  transition: transform 450ms;
+  transition: transform 450ms, -webkit-transform 450ms;
+}
+
+.motivators button:hover {
+  -webkit-transition: -webkit-transform 150ms ease-in-out;
+  transition: -webkit-transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  font-weight: bold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motivators .button {
+    -webkit-transition: none;
+    transition: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
