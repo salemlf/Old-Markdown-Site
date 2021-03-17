@@ -1,0 +1,141 @@
+//TODO: change buttons into hamburger menu for smaller screen
+
+html {
+  //fallback font-size
+  //lets user control font-size in browser, more accessible
+  font-size: 100%;
+  //!temp?
+  font-size: 16px;
+  //makes size of elements include padding in final width
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+  line-height: 1.3;
+  font-size: unquote("min(max(.25rem, 4vw), 18px)");
+  font-weight: 300;
+  background-color: $background;
+
+  //flexbox styles for easy implementation
+  .flex {
+    display: flex;
+
+    &-jc-sb {
+      justify-content: space-between;
+    }
+
+    &-jc-sa {
+      justify-content: space-around;
+    }
+
+    &-jc-c {
+      justify-content: center;
+    }
+
+    &-jc-fe {
+      justify-content: flex-end;
+    }
+
+    &-jc-fs {
+      justify-content: flex-start;
+    }
+
+    &-ai-c {
+      align-items: center;
+    }
+
+    &-ai-fs {
+      align-items: flex-start;
+    }
+
+    &-ai-fe {
+      align-items: flex-end;
+    }
+
+    &-wrap {
+      flex-wrap: wrap;
+    }
+
+    &-fd-row {
+      flex-direction: row;
+    }
+
+    &-fd-col {
+      flex-direction: column;
+    }
+
+    &-ac-sb {
+      align-content: space-between;
+    }
+
+    &-ac-sa {
+      align-content: space-around;
+    }
+  }
+
+  :is(nav, .get-started, .connect-content, .motivate-content) {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  @media (max-width: 1074px) {
+    :is(nav, .get-started, .connect-content, .motivate-content) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+
+  @media (max-width: 630px) {
+    :is(nav, .get-started, .connect-content, .motivate-content) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  h1 {
+    color: #ffffff;
+    font-family: $notoSansJP;
+    font-weight: 700;
+    font-size: unquote("min(max(2.5rem, 4vw), 100px)");
+    letter-spacing: unquote("min(max(-5px, 4vw), 0px)");
+    line-height: 99%;
+    text-shadow: 0px 30px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-family: $notoSansKR;
+    font-weight: 700;
+    font-size: unquote("min(max(1rem, 4vw), 36px)");
+    line-height: 43px;
+  }
+
+  h3 {
+    font-family: $notoSansKR;
+    font-size: unquote("min(max(1rem, 4vw), 20px)");
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  h4 {
+    font-family: $notoSansKR;
+    font-size: unquote("min(max(1rem, 4vw), 18px)");
+  }
+
+  p {
+    font-family: $notoSansKR;
+    font-weight: 300;
+    font-size: unquote("min(max(.25rem, 4vw), 16px)");
+    line-height: 20px;
+  }
+}
