@@ -3,11 +3,9 @@
 //number Averta Extra bold (need to download) color: #DCDCDC size: 80, lh: .9, letter-spacing: -1px Noto Sans KR 900
 //h3 "Connect your crowds": Averta-Semibold 32px (same for others) (using Noto Sans KR Bold 700)
 //p "Onboard users...": Averta-Light 16px (same for others) (using Noto Sans KR Light 300)
-
 //Pink btn text "Schedule a demo today": Averta-Semibold 16px, lh: 17px, ls: 1.5, text color: #FFFFFF, padding: 20px, no border, 6px br
 //TODO: fix spacing between this and devices image
 //TODO: get lower-quality images for smaller screen sizes
-//TODO: fix hr
 
 .motivators {
   width: 100%;
@@ -19,19 +17,15 @@
   z-index: 2;
 
   h2 {
-    // font-size: 48px;
     font-size: unquote("min(max(1.5rem, 4vw), 48px)");
-    // letter-spacing: -1px;
     letter-spacing: unquote("min(max(-1px, 4vw), 0px)");
     line-height: 60px;
-    // margin-bottom: 29px;
   }
 
   h3 {
     font-size: unquote("min(max(1rem, 4vw), 32px)");
     font-weight: 700;
     line-height: 38px;
-    // letter-spacing: -1px;
     letter-spacing: unquote("min(max(-1px, 4vw), 0px)");
   }
 
@@ -44,7 +38,6 @@
     letter-spacing: -1px;
   }
 
-  //127 pixels between
   .motivate-content {
     margin-top: -490px;
     display: grid;
@@ -61,22 +54,14 @@
       padding-top: 175px;
     }
 
-    @media (min-width: 8px) {
-      .service-item {
-        border-top: 1px solid #efefef;
-        border-left: 1px solid #efefef;
-      }
-    }
-
     .motivator-item {
       display: grid;
       grid-template-columns: 247px 1fr;
       grid-column-gap: 60px;
       align-items: start;
 
-      //!added for hr
+      //!added for horizontal rule
       border-top: 1px solid #efefef;
-      //!end of added for hr
 
       .motivate-title {
         display: grid;
@@ -92,13 +77,12 @@
 
       .number h3 {
         font-family: $notoSansKR;
-        // font-size: 80px;
         font-size: unquote("min(max(2.5rem, 4vw), 80px)");
         font-weight: 900;
         letter-spacing: -1px;
         color: #dcdcdc;
-        line-height: 128px;
         //TODO: create calculation for line-height
+        line-height: 128px;
       }
     }
   }
@@ -143,7 +127,7 @@
         .motivator-item {
           grid-column-gap: 30px;
           grid-template-columns: 1fr;
-          grid-template-rows: 1fr 1fr;
+          grid-template-rows: 150px 200px;
 
           .motivate-info {
             grid-template-columns: auto minmax(0, 1fr);
@@ -159,6 +143,12 @@
         .motivate-concert {
           grid-row-start: 1;
           grid-row-end: 3;
+
+          .motivate-img {
+            // url(/app/images/motivators-concert-small.png);
+            object-fit: contain;
+            width: 100%;
+          }
         }
 
         .motivate-meeting {
@@ -171,6 +161,7 @@
     }
   }
 
+  //TODO: add functionality for smaller screens
   @media (max-width: 328px) {
     .motivate-content {
       .motivate-left {
@@ -186,8 +177,7 @@
   .motivate-right {
     display: grid;
     justify-items: center;
-    //TODO: change to repeat
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 2fr 1fr 2fr 2fr;
 
     .motivate-concert {
@@ -238,7 +228,6 @@
     border: none;
     cursor: pointer;
     padding: 20px;
-    // margin-top: 110px;
     margin: 110px 0px;
     border-radius: 6px;
     color: $defaultBtnText;

@@ -19,10 +19,6 @@
     z-index: 1;
   }
 
-  // :is(h1, h2, h3) {
-  //   margin-left: 60px;
-  // }
-
   h2 {
     margin-top: 106px;
   }
@@ -42,12 +38,11 @@
   }
 
   .devices-container {
-    // height: 640px;
     height: 220px;
     align-items: center;
   }
 
-  // //TODO: make margin-left 30% (338px / 1262px)
+  // //TODO: make margin-left ~30% (338px / 1262px)
   img {
     position: absolute;
     z-index: 2;

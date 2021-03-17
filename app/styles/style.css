@@ -452,13 +452,6 @@ body p {
   padding-top: 175px;
 }
 
-@media (min-width: 8px) {
-  .motivators .motivate-left .service-item {
-    border-top: 1px solid #efefef;
-    border-left: 1px solid #efefef;
-  }
-}
-
 .motivators .motivate-left .motivator-item {
   display: -ms-grid;
   display: grid;
@@ -533,8 +526,8 @@ body p {
     grid-column-gap: 30px;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    -ms-grid-rows: 150px 200px;
+        grid-template-rows: 150px 200px;
   }
   .motivators .motivate-content .motivate-left .motivator-item .motivate-info {
     -ms-grid-columns: auto minmax(0, 1fr);
@@ -554,6 +547,11 @@ body p {
     -ms-grid-row: 1;
         grid-row-start: 1;
     grid-row-end: 3;
+  }
+  .motivators .motivate-content .motivate-right .motivate-concert .motivate-img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
   }
   .motivators .motivate-content .motivate-right .motivate-meeting {
     -ms-grid-row: 3;
@@ -579,8 +577,8 @@ body p {
   display: -ms-grid;
   display: grid;
   justify-items: center;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: 1fr 2fr 1fr 2fr 2fr;
       grid-template-rows: 1fr 2fr 1fr 2fr 2fr;
 }
