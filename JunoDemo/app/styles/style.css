@@ -441,7 +441,7 @@ body p {
 @media only screen and (max-width: 767px) {
   .header {
     width: 100%;
-    background: #75346b url("/app/images/header-background-smaller.png") no-repeat fixed center center/cover;
+    background: #75346b url("/JunoDemo/app/images/header-background-smaller.png") no-repeat fixed center center/cover;
   }
 }
 
@@ -504,13 +504,13 @@ body p {
 
 @media only screen and (max-width: 1110px) {
   .connect img {
-    content: url("/app/images/devices-medium.png");
+    content: url("/JunoDemo/app/images/devices-medium.png");
   }
 }
 
 @media only screen and (max-width: 767px) {
   .connect img {
-    content: url("/app/images/devices-smaller.png");
+    content: url("/JunoDemo/app/images/devices-smaller.png");
   }
 }
 
