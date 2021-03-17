@@ -137,7 +137,7 @@ body {
   p {
     font-family: $notoSansKR;
     font-weight: 300;
-    font-size: unquote("min(max(.5rem, 4vw), 16px)");
+    font-size: unquote("min(max(.25rem, 4vw), 16px)");
     line-height: 20px;
   }
 

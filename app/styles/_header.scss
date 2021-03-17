@@ -56,13 +56,14 @@
   .get-started-btn {
     border: none;
     align-self: center;
+    //TODO: chg to responsive
     font-size: 16px;
     line-height: 26px;
     background-color: #ffffff;
     color: #696c74;
     width: 349px;
     height: 53px;
-    padding: 15px 0px 15px 0px;
+    padding: 15px 0px;
     border-radius: 10px;
 
     img {
@@ -96,6 +97,91 @@
 
   h4 {
     margin: 175px 0px 25px 0px;
+  }
+
+  @media (max-width: 400px) {
+    .get-started {
+      margin-top: 100px;
+      .get-started-btn {
+        width: 174px;
+        height: 26px;
+        padding: 7px 0px;
+        font-size: 8px;
+
+        img {
+          width: 13px;
+          height: 12px;
+        }
+      }
+    }
+
+    .app-logo {
+      width: 13px;
+      height: 12px;
+      justify-self: flex-start;
+    }
+
+    .app-info h4 {
+      justify-self: flex-end;
+      margin-left: 5px;
+    }
+  }
+
+  @media (max-width: 630px) {
+    .get-started {
+      margin-top: 100px;
+      .get-started-btn {
+        width: 174px;
+        height: 26px;
+        padding: 7px 0px;
+        font-size: 8px;
+
+        img {
+          width: 14px;
+          height: 13px;
+        }
+      }
+    }
+
+    .app-logo {
+      width: 14px;
+      height: 13px;
+      justify-self: flex-start;
+    }
+
+    .app-info h4 {
+      justify-self: flex-end;
+      margin-left: 5px;
+    }
+  }
+
+  @media (max-width: 1074px) {
+    .get-started {
+      margin-top: 100px;
+
+      .get-started-btn {
+        width: 261px;
+        height: 40px;
+        padding: 11px 0px;
+        font-size: 12px;
+
+        img {
+          width: 18px;
+          height: 19px;
+        }
+      }
+    }
+
+    .app-logo {
+      width: 18px;
+      height: 19px;
+      justify-self: flex-start;
+    }
+
+    .app-info h4 {
+      justify-self: flex-end;
+      margin-left: 5px;
+    }
   }
 }
 

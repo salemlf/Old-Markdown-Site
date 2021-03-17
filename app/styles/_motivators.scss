@@ -46,20 +46,11 @@
 
   //127 pixels between
   .motivate-content {
-    //TODO: change to shorthand
     margin-top: -490px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
     grid-column-gap: 60px;
     align-items: center;
-
-    //!added for hr
-    //!changed from 768px
-    @media (min-width: 328px) {
-      .motivate-left {
-        display: grid;
-      }
-    }
   }
 
   .motivate-left {
@@ -96,6 +87,7 @@
 
       .motivate-info {
         display: grid;
+        align-self: center;
       }
 
       .number h3 {
@@ -116,6 +108,11 @@
       .motivate-left {
         .how-it-works {
           padding-top: 0px;
+        }
+
+        .motivator-item {
+          grid-column-gap: 40px;
+          grid-template-columns: 285px 1fr;
         }
       }
       .motivate-right {
@@ -142,6 +139,16 @@
         .how-it-works {
           padding-top: 0px;
         }
+
+        .motivator-item {
+          grid-column-gap: 30px;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+
+          .motivate-info {
+            grid-template-columns: auto minmax(0, 1fr);
+          }
+        }
       }
       .motivate-right {
         grid-template-rows: 2fr 1fr 2fr 2fr;
@@ -159,6 +166,18 @@
           grid-row-end: 5;
           grid-column-start: 1;
           grid-column-end: 4;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 328px) {
+    .motivate-content {
+      .motivate-left {
+        display: grid;
+
+        .motivator-item {
+          grid-column-gap: 20px;
         }
       }
     }
